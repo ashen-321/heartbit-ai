@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import quote
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def generate_medrxiv_search_url(term=None, title=None, author1=None, author2=None, abstract_title=None, 
                                 text_abstract_title=None, journal_code="medrxiv", section=None,
                                 start_date=None, end_date=None, num_results=10, sort="relevance-rank"):
-    """根据用户输入的字段生成 medRxiv 搜索 URL"""
+    """Generate medRxiv search URL based on user input fields"""
 
     base_url = "https://www.medrxiv.org/search/"
     query_parts = []
@@ -35,7 +38,7 @@ def generate_medrxiv_search_url(term=None, title=None, author1=None, author2=Non
     return base_url + "%20".join(query_parts)
 
 def scrape_medrxiv_results(search_url):
-    """从 medRxiv 搜索结果页面解析文章信息，包括 DOI"""
+    """Parse article information from medRxiv search results pages, including DOI"""
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
     }
@@ -77,11 +80,11 @@ def scrape_medrxiv_results(search_url):
         
         return results
     else:
-        print(f"Error: Unable to fetch data (status code: {response.status_code})")
+        logger.error(f"Unable to fetch data (status code: {response.status_code})")
         return None
 
 def doi_get_medrxiv_metadata(doi, server="medrxiv"):
-    """使用 medRxiv API 通过 DOI 获取文章的详细元数据"""
+    """Use the medRxiv API to retrieve detailed article metadata via DOI"""
     url = f"https://api.medrxiv.org/details/{server}/{doi}/na/json"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
@@ -106,35 +109,35 @@ def doi_get_medrxiv_metadata(doi, server="medrxiv"):
                 "Abstract": article.get("abstract", "No abstract")
             }
         else:
-            print("No data found for DOI:", doi)
+            logger.info("No data found for DOI:", doi)
             return None
     else:
-        print(f"Error: Unable to fetch metadata (status code: {response.status_code})")
+        logger.error(f"Unable to fetch metadata (status code: {response.status_code})")
         return None
 
 def search_key_words(key_words, num_results=10):
-    # 生成搜索 URL
+    # Generate search URL
     search_url = generate_medrxiv_search_url(term=key_words, num_results=num_results)
 
-    print("Generated URL:", search_url)
+    logger.info("Generated URL:", search_url)
 
-    # 获取并解析搜索结果
+    # Get and parse search results
     articles = scrape_medrxiv_results(search_url)
 
     return articles
 
 
 def search_advanced(term, title, author1, author2, abstract_title, text_abstract_title, section, start_date, end_date, num_results):
-    # 生成搜索 URL
+    # Generate search URL
     search_url = generate_medrxiv_search_url(term, title=title, author1=author1, author2=author2, 
                                             abstract_title=abstract_title, 
                                             text_abstract_title=text_abstract_title,
                                             section=section, start_date=start_date, 
                                             end_date=end_date, num_results=num_results)
 
-    print("Generated URL:", search_url)
+    logger.info("Generated URL:", search_url)
 
-    # 获取并解析搜索结果
+    # Get and parse search results
     articles = scrape_medrxiv_results(search_url)
 
     return articles
@@ -144,7 +147,7 @@ if __name__ == "__main__":
     # 1. search_key_words 
     key_words = "COVID-19"
     articles = search_key_words(key_words, num_results=5)
-    print(articles)
+    logger.info(articles)
 
     # 2. search_advanced
     term = "COVID-19"
@@ -158,9 +161,9 @@ if __name__ == "__main__":
     end_date = None 
     num_results = 5
     articles = search_advanced(term, title, author1, author2, abstract_title, text_abstract_title, section, start_date, end_date, num_results)
-    print(articles)
+    logger.info(articles)
 
     # 3. doi get medrxiv metadata
     doi = "10.1101/2025.03.09.25323517"
     metadata = doi_get_medrxiv_metadata(doi)
-    print(metadata)
+    logger.info(metadata)

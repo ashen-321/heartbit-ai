@@ -5,12 +5,9 @@ from agno.tools.mcp import MCPTools
 from mcp import StdioServerParameters
 from textwrap import dedent
 from agno.tools.mcp import MultiMCPTools
-from agno.models.openai import OpenAIChat
 from langchain_openai import ChatOpenAI
-# from agno.models.openai import OpenAIChat
 import asyncio
 from agno.knowledge.url import UrlKnowledge
-# from agno.models.openai import OpenAIChat
 from agno.models.aws.bedrock import AwsBedrock
 from agno.storage.sqlite import SqliteStorage
 from agno.team import Team
@@ -18,14 +15,11 @@ from agno.tools.tavily import TavilyTools
 from agno.tools.knowledge import KnowledgeTools
 from agno.tools.reasoning import ReasoningTools
 from agno.tools.thinking import ThinkingTools
-# from agno.vectordb.lancedb import LanceDb, SearchType
 from agno.vectordb.chroma import ChromaDb
 import configparser
 from agno.models.vllm import vLLM
 from agno.models.openai import OpenAIChat  # could be OpenRouter as well
-from openai import OpenAI
 from agno.embedder.openai import OpenAIEmbedder
-from agno.embedder.aws_bedrock import AwsBedrockEmbedder
 
 ai_thinking_prompt = """
         You are a seasoned medical care provider specializing in diagnosis, prescribe medicine, analyzing medical and bio research papers from pubmed and medrxiv. In addition you can accurately lookup diagnosis code and procedure codes from ICD-10 and recommend clinical trails.
