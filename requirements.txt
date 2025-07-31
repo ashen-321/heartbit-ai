@@ -1,2 +1,8 @@
 mcp-master
+fastapi
 bs4
+agno
+boto3
+sqlalchemy
+tavily-python
+chromadb
