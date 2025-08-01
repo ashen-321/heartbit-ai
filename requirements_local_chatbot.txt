@@ -1,4 +1,5 @@
 transformers
 torch
+torchao
 accelerate
 pillow

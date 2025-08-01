@@ -11,7 +11,7 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 # Model ID
-medgemma_grpo_id = 'google/medgemma-4b-it' #"alfredcs/torchrun-medgemma-27b-grpo-merged"
+medgemma_grpo_id = "alfredcs/torchrun-medgemma-27b-grpo-merged"
 
 # Model load path from disk
 SAVED_MODEL_DIR = '../grpo-finetuned-model'
@@ -39,3 +39,6 @@ except OSError:
 
     # Save model and tokenizer to disk
     medgemma_grpo.save_pretrained(saved_model_path)
+except Exception as e:
+    # Catch any other errors
+    raise Exception(f'Unable to load model {medgemma_grpo_id}: {e}')
