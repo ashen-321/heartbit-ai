@@ -15,7 +15,7 @@ gconfig.OPENAI_BASE_URL = getenv('bedrock_api_url') #'http://infs.cavatar.info:8
 gconfig.autostart_abspath = path.normpath(path.join(path.dirname(__file__), '../mcp-servers'))
 
 master_server = MasterMCPServer(
-    port=8089,
+    port=8087,
     sub_servers=[
         SubServer(url="http://localhost:8001/mcp", identifier='pubmed_server'),
         SubServer(url="http://localhost:8002/mcp", identifier='medrxiv_server'),
