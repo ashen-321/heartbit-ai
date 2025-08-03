@@ -3,5 +3,8 @@
   <component name="Black">
     <option name="sdkName" value="mcp-master" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="mcp-master" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="heartbit" project-jdk-type="Python SDK" />
+  <component name="PyPackaging">
+    <option name="earlyReleasesAsUpgrades" value="true" />
+  </component>
 </project>
