@@ -1,16 +1,13 @@
 try:
-    from transformers import AutoProcessor, AutoModelForImageTextToText
-    import logging
     import os
     import asyncio
     import torch
+    from openai import OpenAI
+    from fastmcp import Client
+    from base64 import b64encode
 except ImportError:
-    raise ImportError('Error importing modules. Ensure all packages from ../requirements_local_chatbot.txt are installed. Run `pip '
-          'install -r requirements_local_chatbot.txt` in the terminal to install the packages.')
-    
-
-# Logging
-logger = logging.getLogger(__name__)
+    raise ImportError('Error importing modules. Ensure all packages from ../requirements.txt are installed. Run `pip '
+          'install -r requirements.txt` in the terminal to install the packages.')
 
 # Create ../input-files if it does not exist
 input_relative_path = '../input-files'
@@ -18,32 +15,59 @@ input_abspath = os.path.normpath(
     os.path.join(os.path.dirname(__file__), input_relative_path)
 )
 if not os.path.exists(input_abspath):
-    logger.debug(f'Input files directory at {input_abspath} does not exist, creating new directory.')
+    print(f'Input files directory at {input_abspath} does not exist, creating new directory.')
     os.mkdir(input_abspath)
 
 
 # Model ID
-medgemma_grpo_id = "google/gemma-3n-e4b-it" #"alfredcs/gemma-3N-finetune"
+MODEL_ID = "google/gemma-3n-e4b-it" #"alfredcs/gemma-3N-finetune"
 
-# Collect model and tokenizer from HF
-logger.debug(f'Loading model {medgemma_grpo_id} from HuggingFace...')
+# Create vLLM client
+OPENAI_API_KEY = "EMPTY"
+OPENAI_API_BASE = "http://video.cavatar.info:8087"
 
-device_map = "cuda:0" if torch.cuda.is_available() else "cpu"  # Using multiple GPUs causes issues
-processor = AutoProcessor.from_pretrained(medgemma_grpo_id, device_map=device_map)
-model = AutoModelForImageTextToText.from_pretrained(
-    medgemma_grpo_id, torch_dtype="auto", device_map=device_map,
+client = OpenAI(
+    api_key=OPENAI_API_KEY,
+    base_url=OPENAI_API_BASE,
 )
+
+# Create FastMCP client
+MCP_URL = 'http://localhost:3000/mcp'
+mcp_client = Client(MCP_URL)
+
+
+# Get tools
+async def get_tools():
+    try:
+        async with mcp_client:
+            return await mcp_client.list_tools()
+    except RuntimeError:
+        raise RuntimeError('Ensure master_mcp_server.py is running before starting the chatbot.')
+
+
+# Call tool
+async def call_tool(tool):
+    async with mcp_client:
+        return await mcp_client.call_tool(tool.function.name, tool.function.arguments)
 
 
 # See if file is an image or audio based on the extension
-def get_file_type(extension: str) -> str:
+def get_file_info(file_abspath: str):
+    # Get file as bytes
+    with open(file_abspath, "rb") as file:
+        encoded_bytes = b64encode(file.read())
+        encoded_string = encoded_bytes.decode('utf-8')
+
+    # Get file extension
+    _, extension = os.path.splitext(file_abspath)
+
     match extension:
         case ".jpg" | ".png" | ".webp":
-            return "image"
+            return "image", encoded_string
         case ".mp3" | ".wav":
-            return "audio"
+            return "audio", encoded_string
         case _:
-            return "UNKNOWN"
+            return "UNKNOWN", encoded_string
 
 
 # Process a query
@@ -63,11 +87,10 @@ async def process_query(query: str):
         if entry.startswith("#"):
             continue
 
-        # Add message content based on image type
-        _, file_extension = os.path.splitext(entry_abspath)
-        file_type = get_file_type(file_extension)
-        file_relpath = os.path.join(input_relative_path, entry)
-        message_content.append({"type": file_type, file_type: file_relpath})
+        # Add message content based on file type
+        file_type, file_b64 = get_file_info(entry_abspath)
+
+        message_content.append({"type": file_type, file_type: file_b64})
 
     # Add query to message content
     message_content.append({"type": "text", "text": query})
@@ -76,31 +99,45 @@ async def process_query(query: str):
     messages.append({"role": "user", "content": message_content})
 
     # Call model with messages
-    input_ids = processor.apply_chat_template(
-        messages,
-        add_generation_prompt=True,
-        tokenize=True, return_dict=True,
-        return_tensors="pt",
+    response = client.chat.completions.create(
+        model=MODEL_ID,
+        messages=messages,
+        tools=tools
     )
-    input_ids = input_ids.to(model.device, dtype=model.dtype)
-    
-    outputs = model.generate(**input_ids, max_new_tokens=256)
-    
-    text = processor.batch_decode(
-        outputs,
-        skip_special_tokens=True,
-        clean_up_tokenization_spaces=False
-    )[0]
+    tool_calls = response.choices[0].message.tool_calls
+    print(f'Selected tools: {tool_calls}')
+
+    # Call tools and save results
+    if len(tool_calls):
+        for tool in tool_calls:
+            result = await call_tool(tool)
+            messages.append({"role": "user", "content": result.content[0].text})
+
+    # Get next response from LLM
+    response = client.chat.completions.create(
+        model=MODEL_ID,
+        max_tokens=3000,
+        messages=messages,
+    )
+    response = response.choices[0].message.content
+    print("Chat response:", response)
 
     # Save model output to message memory
-    messages.append({"role": "assistant", "content": text})
-    return text
+    messages.append({"role": "assistant", "content": response})
+    return response
 
 
 # Main chat loop
 messages = []
-while True:
-    try:
+tools = []
+async def main():
+    global messages, tools
+
+    # Get tools
+    tools = await get_tools()
+
+    while True:
+        # try:
         query = input("\nQuery: ").strip()
 
         # Exit the program if the user enters "quit"
@@ -112,8 +149,12 @@ while True:
             messages = []
             continue
 
-        response = asyncio.run(process_query(query))
+        response = await process_query(query)
         print("\n" + response)
 
-    except Exception as e:
-        print(f"\n{type(e).__name__}: {str(e)}")processor = AutoProcessor.from_pretrained(medgemma_grpo_id, device_map=device_map)
+        # except Exception as e:
+        #     print(f"\n{type(e).__name__}: {str(e)}")
+
+
+if __name__ == '__main__':
+    asyncio.run(main())
