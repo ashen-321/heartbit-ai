@@ -4,3 +4,5 @@ torchao
 accelerate
 pillow
 timm
+bitsandbytes
+librosa

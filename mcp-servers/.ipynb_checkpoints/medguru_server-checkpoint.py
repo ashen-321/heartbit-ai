@@ -74,7 +74,7 @@ def main():
     
     parser = argparse.ArgumentParser(description='GitHub MCP Server')
     parser.add_argument('--host', default='0.0.0.0', help='Host to bind to')
-    parser.add_argument('--port', type=int, default=8086, help='Port to bind to')
+    parser.add_argument('--port', type=int, default=8003, help='Port to bind to')
     parser.add_argument('--transport', default='streamable-http', 
                        choices=['streamable-http', 'http'], 
                        help='Transport protocol to use')
