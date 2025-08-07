@@ -1,4 +1,5 @@
 mcp-master
+streamlit
 fastapi
 bs4
 agno
@@ -6,3 +7,4 @@ boto3
 sqlalchemy
 tavily-python
 chromadb
+requests
