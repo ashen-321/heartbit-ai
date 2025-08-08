@@ -44,25 +44,3 @@ def get_asr(audio_filename):
         return output
     else:
         return ""
-
-
-def openai_generate(model_id: str, messages, max_tokens: int, tools: list | NotGiven = NOT_GIVEN):
-    openai_api_key = "EMPTY"
-    openai_api_base = "http://mcp1.cavatar.info:8081/v1"
-
-    client = OpenAI(
-        api_key=openai_api_key,
-        base_url=openai_api_base,
-    )
-
-    chat_response = client.chat.completions.create(
-        model=model_id,
-        messages=[
-            {"role": "system",
-             "content": "You are a helpful assistant. Please answer the user question accurately and truthfully."},
-            {"role": "user", "content": messages},
-        ],
-        max_tokens=max_tokens,
-        tools=tools
-    )
-    return chat_response

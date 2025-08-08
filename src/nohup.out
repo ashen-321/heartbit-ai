@@ -1,0 +1,517 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:7868
+  Network URL: http://172.31.11.95:7868
+  External URL: http://44.229.65.238:7868
+
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:17 in <module>                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 14 [0m                                                                               [31m [0m
+[31m [0m   [2m 15 [0m                                                                               [31m [0m
+[31m [0m   [2m 16 [0m[2m# Variables and constants[0m                                                      [31m [0m
+[31m [0m [31m❱ [0m 17 aoss_host = [1;4mread_key_value([0m[1;4;33m"[0m[1;4;33m.aoss_config.txt[0m[1;4;33m"[0m[1;4m, [0m[1;4;33m"[0m[1;4;33mAOSS_host_name[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+[31m [0m   [2m 18 [0maoss_index = read_key_value([33m"[0m[33m.aoss_config.txt[0m[33m"[0m, [33m"[0m[33mAOSS_index_name[0m[33m"[0m)             [31m [0m
+[31m [0m   [2m 19 [0m                                                                               [31m [0m
+[31m [0m   [2m 20 [0minput_file_path = os.path.join(os.path.dirname([91m__file__[0m), [33m"[0m[33minput-files[0m[33m"[0m)       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mutil.py[0m:11 in read_key_value          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 8 [0m                                                                                [31m [0m
+[31m [0m   [2m 9 [0m[2m# Get AOSS key and values[0m                                                       [31m [0m
+[31m [0m   [2m10 [0m[94mdef[0m[90m [0m[92mread_key_value[0m(file_path, key):                                             [31m [0m
+[31m [0m [31m❱ [0m11 [2m│   [0m[94mwith[0m [1;4;96mopen[0m[1;4m(file_path, [0m[1;4;33m'[0m[1;4;33mr[0m[1;4;33m'[0m[1;4m)[0m [94mas[0m file:                                          [31m [0m
+[31m [0m   [2m12 [0m[2m│   │   [0m[94mfor[0m line [95min[0m file:                                                       [31m [0m
+[31m [0m   [2m13 [0m[2m│   │   │   [0mkey_value_pairs = line.strip().split([33m'[0m[33m:[0m[33m'[0m)                           [31m [0m
+[31m [0m   [2m14 [0m[2m│   │   │   [0m[94mif[0m key_value_pairs[[94m0[0m] == key:                                       [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mFileNotFoundError: [0m[1m[[0mErrno [1;36m2[0m[1m][0m No such file or directory: [32m'.aoss_config.txt'[0m
+  Stopping...
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:7868
+  Network URL: http://172.31.11.95:7868
+  External URL: http://44.229.65.238:7868
+
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:71 in <module>                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 68 [0m[2m│   │   │   [0mst.image(io.BytesIO(image_bytes))                                  [31m [0m
+[31m [0m   [2m 69 [0m[2m│   │   │   [0m                                                                   [31m [0m
+[31m [0m   [2m 70 [0m[2m│   │   │   [0minput_file = os.path.join(input_file_path, input_image_file + [33mf[0m[33m"[0m[33m_[0m[33m{[0m [31m [0m
+[31m [0m [31m❱ [0m 71 [2m│   │   │   [0m[94mwith[0m [1;4;96mopen[0m[1;4m(input_file, [0m[1;4;33m'[0m[1;4;33mwb[0m[1;4;33m'[0m[1;4m)[0m [94mas[0m image_file:                         [31m [0m
+[31m [0m   [2m 72 [0m[2m│   │   │   │   [0mimage_file.write(image_bytes)                                  [31m [0m
+[31m [0m   [2m 73 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m 74 [0m[2m│   │   [0mlast_uploaded_files = upload_file                                      [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mFileNotFoundError: [0m[1m[[0mErrno [1;36m2[0m[1m][0m No such file or directory: 
+[32m'./input-files/input_image_0.jpeg'[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:204 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m201 [0m[2m│   [0mst.chat_message([33m"[0m[33muser[0m[33m"[0m).write(prompt)                                      [31m [0m
+[31m [0m   [2m202 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m203 [0m[2m│   [0m[2m# Generate response[0m                                                        [31m [0m
+[31m [0m [31m❱ [0m204 [2m│   [0mresponse = [1;4mopenai_generate(MODEL_ID, st.session_state.messages, max_tokens[0m [31m [0m
+[31m [0m   [2m205 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m206 [0m[2m│   [0m[2m# Call tools and save results[0m                                              [31m [0m
+[31m [0m   [2m207 [0m[2m│   [0mtool_calls = response.choices[[94m0[0m].message.tool_calls                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mutil.py[0m:58 in openai_generate         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m55 [0m[2m│   │   [0mbase_url=openai_api_base,                                               [31m [0m
+[31m [0m   [2m56 [0m[2m│   [0m)                                                                           [31m [0m
+[31m [0m   [2m57 [0m[2m│   [0m                                                                            [31m [0m
+[31m [0m [31m❱ [0m58 [2m│   [0mchat_response = [1;4mclient.chat.completions.create([0m                             [31m [0m
+[31m [0m   [2m59 [0m[2m│   │   [0m[1;4mmodel=model_id,[0m                                                         [31m [0m
+[31m [0m   [2m60 [0m[2m│   │   [0m[1;4mmessages=[[0m                                                              [31m [0m
+[31m [0m   [2m61 [0m[2m│   │   │   [0m[1;4m{[0m[1;4;33m"[0m[1;4;33mrole[0m[1;4;33m"[0m[1;4m: [0m[1;4;33m"[0m[1;4;33msystem[0m[1;4;33m"[0m[1;4m,[0m                                                  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/_utils/[0m[1m_uti[0m [31m [0m
+[31m [0m [1mls.py[0m:287 in wrapper                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m284 [0m[2m│   │   │   │   │   [0m[94melse[0m:                                                      [31m [0m
+[31m [0m   [2m285 [0m[2m│   │   │   │   │   │   [0mmsg = [33mf[0m[33m"[0m[33mMissing required argument: [0m[33m{[0mquote(missing[[94m0[0m])[33m}[0m [31m [0m
+[31m [0m   [2m286 [0m[2m│   │   │   │   [0m[94mraise[0m [96mTypeError[0m(msg)                                           [31m [0m
+[31m [0m [31m❱ [0m287 [2m│   │   │   [0m[94mreturn[0m [1;4mfunc(*args, **kwargs)[0m                                       [31m [0m
+[31m [0m   [2m288 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m289 [0m[2m│   │   [0m[94mreturn[0m wrapper  [2m# type: ignore[0m                                         [31m [0m
+[31m [0m   [2m290 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/resources/c[0m [31m [0m
+[31m [0m [2mhat/completions/[0m[1mcompletions.py[0m:1131 in create                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1128 [0m[2m│   │   [0mtimeout: [96mfloat[0m | httpx.Timeout | [94mNone[0m | NotGiven = NOT_GIVEN,         [31m [0m
+[31m [0m   [2m1129 [0m[2m│   [0m) -> ChatCompletion | Stream[ChatCompletionChunk]:                        [31m [0m
+[31m [0m   [2m1130 [0m[2m│   │   [0mvalidate_response_format(response_format)                             [31m [0m
+[31m [0m [31m❱ [0m1131 [2m│   │   [0m[94mreturn[0m [1;4;96mself[0m[1;4m._post([0m                                                    [31m [0m
+[31m [0m   [2m1132 [0m[2m│   │   │   [0m[1;4;33m"[0m[1;4;33m/chat/completions[0m[1;4;33m"[0m[1;4m,[0m                                              [31m [0m
+[31m [0m   [2m1133 [0m[2m│   │   │   [0m[1;4mbody=maybe_transform([0m                                             [31m [0m
+[31m [0m   [2m1134 [0m[2m│   │   │   │   [0m[1;4m{[0m                                                             [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1256 in post                                                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1253 [0m[2m│   │   [0mopts = FinalRequestOptions.construct(                                 [31m [0m
+[31m [0m   [2m1254 [0m[2m│   │   │   [0mmethod=[33m"[0m[33mpost[0m[33m"[0m, url=path, json_data=body, files=to_httpx_files(fil [31m [0m
+[31m [0m   [2m1255 [0m[2m│   │   [0m)                                                                     [31m [0m
+[31m [0m [31m❱ [0m1256 [2m│   │   [0m[94mreturn[0m cast(ResponseT, [1;4;96mself[0m[1;4m.request(cast_to, opts, stream=stream, str[0m [31m [0m
+[31m [0m   [2m1257 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m1258 [0m[2m│   [0m[94mdef[0m[90m [0m[92mpatch[0m(                                                                [31m [0m
+[31m [0m   [2m1259 [0m[2m│   │   [0m[96mself[0m,                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1044 in request                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1041 [0m[2m│   │   │   │   │   [0merr.response.read()                                       [31m [0m
+[31m [0m   [2m1042 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+[31m [0m   [2m1043 [0m[2m│   │   │   │   [0mlog.debug([33m"[0m[33mRe-raising status error[0m[33m"[0m)                          [31m [0m
+[31m [0m [31m❱ [0m1044 [2m│   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mself[0m[1;4m._make_status_error_from_response(err.response) [0m[1;4;94mfro[0m [31m [0m
+[31m [0m   [2m1045 [0m[2m│   │   │   [0m                                                                  [31m [0m
+[31m [0m   [2m1046 [0m[2m│   │   │   [0m[94mbreak[0m                                                             [31m [0m
+[31m [0m   [2m1047 [0m                                                                              [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mNotFoundError: [0mError code: [1;36m404[0m - [1m{[0m[32m'object'[0m: [32m'error'[0m, [32m'message'[0m: [32m'The model [0m
+[32m`alfredcs/gemma-3N-finetune` does not exist.'[0m, [32m'type'[0m: [32m'NotFoundError'[0m, [32m'param'[0m: [3;35mNone[0m, 
+[32m'code'[0m: [1;36m404[0m[1m}[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:204 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m201 [0m[2m│   [0mst.chat_message([33m"[0m[33muser[0m[33m"[0m).write(prompt)                                      [31m [0m
+[31m [0m   [2m202 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m203 [0m[2m│   [0m[2m# Generate response[0m                                                        [31m [0m
+[31m [0m [31m❱ [0m204 [2m│   [0mresponse = [1;4mopenai_generate(MODEL_ID, st.session_state.messages, max_tokens[0m [31m [0m
+[31m [0m   [2m205 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m206 [0m[2m│   [0m[2m# Call tools and save results[0m                                              [31m [0m
+[31m [0m   [2m207 [0m[2m│   [0mtool_calls = response.choices[[94m0[0m].message.tool_calls                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mutil.py[0m:58 in openai_generate         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m55 [0m[2m│   │   [0mbase_url=openai_api_base,                                               [31m [0m
+[31m [0m   [2m56 [0m[2m│   [0m)                                                                           [31m [0m
+[31m [0m   [2m57 [0m[2m│   [0m                                                                            [31m [0m
+[31m [0m [31m❱ [0m58 [2m│   [0mchat_response = [1;4mclient.chat.completions.create([0m                             [31m [0m
+[31m [0m   [2m59 [0m[2m│   │   [0m[1;4mmodel=model_id,[0m                                                         [31m [0m
+[31m [0m   [2m60 [0m[2m│   │   [0m[1;4mmessages=[[0m                                                              [31m [0m
+[31m [0m   [2m61 [0m[2m│   │   │   [0m[1;4m{[0m[1;4;33m"[0m[1;4;33mrole[0m[1;4;33m"[0m[1;4m: [0m[1;4;33m"[0m[1;4;33msystem[0m[1;4;33m"[0m[1;4m,[0m                                                  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/_utils/[0m[1m_uti[0m [31m [0m
+[31m [0m [1mls.py[0m:287 in wrapper                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m284 [0m[2m│   │   │   │   │   [0m[94melse[0m:                                                      [31m [0m
+[31m [0m   [2m285 [0m[2m│   │   │   │   │   │   [0mmsg = [33mf[0m[33m"[0m[33mMissing required argument: [0m[33m{[0mquote(missing[[94m0[0m])[33m}[0m [31m [0m
+[31m [0m   [2m286 [0m[2m│   │   │   │   [0m[94mraise[0m [96mTypeError[0m(msg)                                           [31m [0m
+[31m [0m [31m❱ [0m287 [2m│   │   │   [0m[94mreturn[0m [1;4mfunc(*args, **kwargs)[0m                                       [31m [0m
+[31m [0m   [2m288 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m289 [0m[2m│   │   [0m[94mreturn[0m wrapper  [2m# type: ignore[0m                                         [31m [0m
+[31m [0m   [2m290 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/resources/c[0m [31m [0m
+[31m [0m [2mhat/completions/[0m[1mcompletions.py[0m:1131 in create                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1128 [0m[2m│   │   [0mtimeout: [96mfloat[0m | httpx.Timeout | [94mNone[0m | NotGiven = NOT_GIVEN,         [31m [0m
+[31m [0m   [2m1129 [0m[2m│   [0m) -> ChatCompletion | Stream[ChatCompletionChunk]:                        [31m [0m
+[31m [0m   [2m1130 [0m[2m│   │   [0mvalidate_response_format(response_format)                             [31m [0m
+[31m [0m [31m❱ [0m1131 [2m│   │   [0m[94mreturn[0m [1;4;96mself[0m[1;4m._post([0m                                                    [31m [0m
+[31m [0m   [2m1132 [0m[2m│   │   │   [0m[1;4;33m"[0m[1;4;33m/chat/completions[0m[1;4;33m"[0m[1;4m,[0m                                              [31m [0m
+[31m [0m   [2m1133 [0m[2m│   │   │   [0m[1;4mbody=maybe_transform([0m                                             [31m [0m
+[31m [0m   [2m1134 [0m[2m│   │   │   │   [0m[1;4m{[0m                                                             [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1256 in post                                                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1253 [0m[2m│   │   [0mopts = FinalRequestOptions.construct(                                 [31m [0m
+[31m [0m   [2m1254 [0m[2m│   │   │   [0mmethod=[33m"[0m[33mpost[0m[33m"[0m, url=path, json_data=body, files=to_httpx_files(fil [31m [0m
+[31m [0m   [2m1255 [0m[2m│   │   [0m)                                                                     [31m [0m
+[31m [0m [31m❱ [0m1256 [2m│   │   [0m[94mreturn[0m cast(ResponseT, [1;4;96mself[0m[1;4m.request(cast_to, opts, stream=stream, str[0m [31m [0m
+[31m [0m   [2m1257 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m1258 [0m[2m│   [0m[94mdef[0m[90m [0m[92mpatch[0m(                                                                [31m [0m
+[31m [0m   [2m1259 [0m[2m│   │   [0m[96mself[0m,                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1044 in request                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1041 [0m[2m│   │   │   │   │   [0merr.response.read()                                       [31m [0m
+[31m [0m   [2m1042 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+[31m [0m   [2m1043 [0m[2m│   │   │   │   [0mlog.debug([33m"[0m[33mRe-raising status error[0m[33m"[0m)                          [31m [0m
+[31m [0m [31m❱ [0m1044 [2m│   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mself[0m[1;4m._make_status_error_from_response(err.response) [0m[1;4;94mfro[0m [31m [0m
+[31m [0m   [2m1045 [0m[2m│   │   │   [0m                                                                  [31m [0m
+[31m [0m   [2m1046 [0m[2m│   │   │   [0m[94mbreak[0m                                                             [31m [0m
+[31m [0m   [2m1047 [0m                                                                              [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mBadRequestError: [0mError code: [1;36m400[0m - [1m{[0m[32m'object'[0m: [32m'error'[0m, [32m'message'[0m: [32m"8 validation errors [0m
+[32mfor ValidatorIterator\n0.ChatCompletionContentPartTextParam.text\n  Field required [0m
+[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and truthfully.'[0m[32m}[0m[32m, [0m
+[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.ChatCompletionContentPartTextParam.type\n [0m
+[32mField required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and [0m
+[32mtruthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.ChatCompletionContentPartImageParam.image_[0m
+[32murl\n  Field required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and [0m
+[32mtruthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.ChatCompletionContentPartImageParam.type\n[0m
+[32mField required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and [0m
+[32mtruthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.ChatCompletionContentPartInputAudioParam.i[0m
+[32mnput_audio\n  Field required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', [0m
+[32m'conte...rately and truthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.ChatCompletionContentPartInputAudioParam.t[0m
+[32mype\n  Field required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and [0m
+[32mtruthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing\n0.File.file\n  Field required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m,[0m
+[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and truthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    [0m
+[32mFor further information visit https://errors.pydantic.dev/2.11/v/missing\n0.File.type\n [0m
+[32mField required [0m[32m[[0m[32mtype[0m[32m=[0m[32mmissing[0m[32m, [0m[32minput_value[0m[32m=[0m[32m{[0m[32m'role': 'system', 'conte...rately and [0m
+[32mtruthfully.'[0m[32m}[0m[32m, [0m[32minput_type[0m[32m=[0m[32mdict[0m[32m][0m[32m\n    For further information visit [0m
+[32mhttps://errors.pydantic.dev/2.11/v/missing None"[0m, [32m'type'[0m: [32m'BadRequestError'[0m, [32m'param'[0m: 
+[3;35mNone[0m, [32m'code'[0m: [1;36m400[0m[1m}[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:204 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m201 [0m[2m│   [0mst.chat_message([33m"[0m[33muser[0m[33m"[0m).write(prompt)                                      [31m [0m
+[31m [0m   [2m202 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m203 [0m[2m│   [0m[2m# Generate response[0m                                                        [31m [0m
+[31m [0m [31m❱ [0m204 [2m│   [0mresponse = [1;4mopenai_generate(MODEL_ID, st.session_state.messages, max_tokens[0m [31m [0m
+[31m [0m   [2m205 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m206 [0m[2m│   [0m[1;2;4m# Call tools and save results[0m                                              [31m [0m
+[31m [0m   [2m207 [0m[2m│   [0m[1;4mtool_calls = response.choices[[0m[1;4;94m0[0m[1;4m].message.tool_calls[0m                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/_utils/[0m[1m_uti[0m [31m [0m
+[31m [0m [1mls.py[0m:287 in wrapper                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m284 [0m[2m│   │   │   │   │   [0m[94melse[0m:                                                      [31m [0m
+[31m [0m   [2m285 [0m[2m│   │   │   │   │   │   [0mmsg = [33mf[0m[33m"[0m[33mMissing required argument: [0m[33m{[0mquote(missing[[94m0[0m])[33m}[0m [31m [0m
+[31m [0m   [2m286 [0m[2m│   │   │   │   [0m[94mraise[0m [96mTypeError[0m(msg)                                           [31m [0m
+[31m [0m [31m❱ [0m287 [2m│   │   │   [0m[94mreturn[0m [1;4mfunc(*args, **kwargs)[0m                                       [31m [0m
+[31m [0m   [2m288 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m289 [0m[2m│   │   [0m[94mreturn[0m wrapper  [2m# type: ignore[0m                                         [31m [0m
+[31m [0m   [2m290 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/resources/c[0m [31m [0m
+[31m [0m [2mhat/completions/[0m[1mcompletions.py[0m:1131 in create                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1128 [0m[2m│   │   [0mtimeout: [96mfloat[0m | httpx.Timeout | [94mNone[0m | NotGiven = NOT_GIVEN,         [31m [0m
+[31m [0m   [2m1129 [0m[2m│   [0m) -> ChatCompletion | Stream[ChatCompletionChunk]:                        [31m [0m
+[31m [0m   [2m1130 [0m[2m│   │   [0mvalidate_response_format(response_format)                             [31m [0m
+[31m [0m [31m❱ [0m1131 [2m│   │   [0m[94mreturn[0m [1;4;96mself[0m[1;4m._post([0m                                                    [31m [0m
+[31m [0m   [2m1132 [0m[2m│   │   │   [0m[1;4;33m"[0m[1;4;33m/chat/completions[0m[1;4;33m"[0m[1;4m,[0m                                              [31m [0m
+[31m [0m   [2m1133 [0m[2m│   │   │   [0m[1;4mbody=maybe_transform([0m                                             [31m [0m
+[31m [0m   [2m1134 [0m[2m│   │   │   │   [0m[1;4m{[0m                                                             [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1256 in post                                                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1253 [0m[2m│   │   [0mopts = FinalRequestOptions.construct(                                 [31m [0m
+[31m [0m   [2m1254 [0m[2m│   │   │   [0mmethod=[33m"[0m[33mpost[0m[33m"[0m, url=path, json_data=body, files=to_httpx_files(fil [31m [0m
+[31m [0m   [2m1255 [0m[2m│   │   [0m)                                                                     [31m [0m
+[31m [0m [31m❱ [0m1256 [2m│   │   [0m[94mreturn[0m cast(ResponseT, [1;4;96mself[0m[1;4m.request(cast_to, opts, stream=stream, str[0m [31m [0m
+[31m [0m   [2m1257 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m1258 [0m[2m│   [0m[94mdef[0m[90m [0m[92mpatch[0m(                                                                [31m [0m
+[31m [0m   [2m1259 [0m[2m│   │   [0m[96mself[0m,                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/openai/[0m[1m_base_clien[0m [31m [0m
+[31m [0m [1mt.py[0m:1044 in request                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1041 [0m[2m│   │   │   │   │   [0merr.response.read()                                       [31m [0m
+[31m [0m   [2m1042 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+[31m [0m   [2m1043 [0m[2m│   │   │   │   [0mlog.debug([33m"[0m[33mRe-raising status error[0m[33m"[0m)                          [31m [0m
+[31m [0m [31m❱ [0m1044 [2m│   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mself[0m[1;4m._make_status_error_from_response(err.response) [0m[1;4;94mfro[0m [31m [0m
+[31m [0m   [2m1045 [0m[2m│   │   │   [0m                                                                  [31m [0m
+[31m [0m   [2m1046 [0m[2m│   │   │   [0m[94mbreak[0m                                                             [31m [0m
+[31m [0m   [2m1047 [0m                                                                              [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mNotFoundError: [0mError code: [1;36m404[0m - [1m{[0m[32m'object'[0m: [32m'error'[0m, [32m'message'[0m: [32m'The model [0m
+[32m`alfredcs/torchrun-medgemma-27b-grpo-merged` does not exist.'[0m, [32m'type'[0m: [32m'NotFoundError'[0m, 
+[32m'param'[0m: [3;35mNone[0m, [32m'code'[0m: [1;36m404[0m[1m}[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:215 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m212 [0m[2m│   [0mtool_calls = response.choices[[94m0[0m].message.tool_calls                        [31m [0m
+[31m [0m   [2m213 [0m[2m│   [0m[94mif[0m [96mlen[0m(tool_calls):                                                        [31m [0m
+[31m [0m   [2m214 [0m[2m│   │   [0m[94mfor[0m tool [95min[0m tool_calls:                                                [31m [0m
+[31m [0m [31m❱ [0m215 [2m│   │   │   [0mresult = [1;4masyncio.run(call_tool(tool))[0m                              [31m [0m
+[31m [0m   [2m216 [0m[2m│   │   │   [0mst.session_state.messages.append({[33m"[0m[33mrole[0m[33m"[0m: [33m"[0m[33muser[0m[33m"[0m, [33m"[0m[33mcontent[0m[33m"[0m: resul [31m [0m
+[31m [0m   [2m217 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m218 [0m[2m│   [0m[2m# Get next response from LLM[0m                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:195 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m192 [0m[2m│   │   │   [0m[33m"[0m[33masyncio.run() cannot be called from a running event loop[0m[33m"[0m)        [31m [0m
+[31m [0m   [2m193 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m194 [0m[2m│   [0m[94mwith[0m Runner(debug=debug, loop_factory=loop_factory) [94mas[0m runner:             [31m [0m
+[31m [0m [31m❱ [0m195 [2m│   │   [0m[94mreturn[0m [1;4mrunner.run(main)[0m                                                [31m [0m
+[31m [0m   [2m196 [0m                                                                               [31m [0m
+[31m [0m   [2m197 [0m                                                                               [31m [0m
+[31m [0m   [2m198 [0m[94mdef[0m[90m [0m[92m_cancel_all_tasks[0m(loop):                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:118 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m116 [0m[2m│   │   [0m[96mself[0m._interrupt_count = [94m0[0m                                              [31m [0m
+[31m [0m   [2m117 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m118 [2m│   │   │   [0m[94mreturn[0m [96mself[0m._loop.run_until_complete(task)                         [31m [0m
+[31m [0m   [2m119 [0m[2m│   │   [0m[94mexcept[0m exceptions.CancelledError:                                      [31m [0m
+[31m [0m   [2m120 [0m[2m│   │   │   [0m[94mif[0m [96mself[0m._interrupt_count > [94m0[0m:                                      [31m [0m
+[31m [0m   [2m121 [0m[2m│   │   │   │   [0muncancel = [96mgetattr[0m(task, [33m"[0m[33muncancel[0m[33m"[0m, [94mNone[0m)                     [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mbase_events.py[0m:725 in    [31m [0m
+[31m [0m run_until_complete                                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 722 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                                 [31m [0m
+[31m [0m   [2m 723 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future completed.[0m[33m'[0m) [31m [0m
+[31m [0m   [2m 724 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m [31m❱ [0m 725 [2m│   │   [0m[94mreturn[0m [1;4mfuture.result()[0m                                                [31m [0m
+[31m [0m   [2m 726 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m 727 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                           [31m [0m
+[31m [0m   [2m 728 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:136 in call_tool              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m133 [0m[2m# Call tool[0m                                                                    [31m [0m
+[31m [0m   [2m134 [0m[94masync[0m [94mdef[0m[90m [0m[92mcall_tool[0m(tool):                                                     [31m [0m
+[31m [0m   [2m135 [0m[2m│   [0m[94masync[0m [94mwith[0m st.session_state[[33m"[0m[33mmcp_client[0m[33m"[0m] [94mas[0m mcp_client:                   [31m [0m
+[31m [0m [31m❱ [0m136 [2m│   │   [0m[94mreturn[0m [1;4;94mawait[0m[1;4m mcp_client.call_tool(tool.function.name, tool.function.ar[0m [31m [0m
+[31m [0m   [2m137 [0m                                                                               [31m [0m
+[31m [0m   [2m138 [0m                                                                               [31m [0m
+[31m [0m   [2m139 [0m[2m# ----------------------------------------------------------------------------[0m [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:857 in call_tool                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m854 [0m[2;33m│   │   │   [0m[33mToolError: If the tool call results in an error.[0m                   [31m [0m
+[31m [0m   [2m855 [0m[2;33m│   │   │   [0m[33mRuntimeError: If called while the client is not connected.[0m         [31m [0m
+[31m [0m   [2m856 [0m[2;33m│   │   [0m[33m"""[0m                                                                    [31m [0m
+[31m [0m [31m❱ [0m857 [2m│   │   [0mresult = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.call_tool_mcp([0m                                     [31m [0m
+[31m [0m   [2m858 [0m[2m│   │   │   [0m[1;4mname=name,[0m                                                         [31m [0m
+[31m [0m   [2m859 [0m[2m│   │   │   [0m[1;4marguments=arguments [0m[1;4;95mor[0m[1;4m {},[0m                                         [31m [0m
+[31m [0m   [2m860 [0m[2m│   │   │   [0m[1;4mtimeout=timeout,[0m                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:818 in call_tool_mcp                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m815 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m816 [0m[2m│   │   [0m[94mif[0m [96misinstance[0m(timeout, [96mint[0m | [96mfloat[0m):                                   [31m [0m
+[31m [0m   [2m817 [0m[2m│   │   │   [0mtimeout = datetime.timedelta(seconds=timeout)                      [31m [0m
+[31m [0m [31m❱ [0m818 [2m│   │   [0mresult = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.session.call_tool([0m                                 [31m [0m
+[31m [0m   [2m819 [0m[2m│   │   │   [0m[1;4mname=name,[0m                                                         [31m [0m
+[31m [0m   [2m820 [0m[2m│   │   │   [0m[1;4marguments=arguments,[0m                                               [31m [0m
+[31m [0m   [2m821 [0m[2m│   │   │   [0m[1;4mread_timeout_seconds=timeout,[0m                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/mcp/client/[0m[1msession[0m [31m [0m
+[31m [0m [1m.py[0m:297 in call_tool                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m294 [0m[2m│   │   │   [0mtypes.ClientRequest(                                               [31m [0m
+[31m [0m   [2m295 [0m[2m│   │   │   │   [0mtypes.CallToolRequest(                                         [31m [0m
+[31m [0m   [2m296 [0m[2m│   │   │   │   │   [0mmethod=[33m"[0m[33mtools/call[0m[33m"[0m,                                       [31m [0m
+[31m [0m [31m❱ [0m297 [2m│   │   │   │   │   [0mparams=[1;4mtypes.CallToolRequestParams([0m                        [31m [0m
+[31m [0m   [2m298 [0m[2m│   │   │   │   │   │   [0m[1;4mname=name,[0m                                             [31m [0m
+[31m [0m   [2m299 [0m[2m│   │   │   │   │   │   [0m[1;4marguments=arguments,[0m                                   [31m [0m
+[31m [0m   [2m300 [0m[2m│   │   │   │   │   [0m[1;4m)[0m,                                                         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/pydantic/[0m[1mmain.py[0m:2 [31m [0m
+[31m [0m 53 in __init__                                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 250 [0m[2;33m│   │   [0m[33m"""[0m                                                                   [31m [0m
+[31m [0m   [2m 251 [0m[2m│   │   [0m[2m# `__tracebackhide__` tells pytest and some other tools to omit this [0m [31m [0m
+[31m [0m   [2m 252 [0m[2m│   │   [0m__tracebackhide__ = [94mTrue[0m                                              [31m [0m
+[31m [0m [31m❱ [0m 253 [2m│   │   [0mvalidated_self = [1;4;96mself[0m[1;4m.__pydantic_validator__.validate_python(data, se[0m [31m [0m
+[31m [0m   [2m 254 [0m[2m│   │   [0m[94mif[0m [96mself[0m [95mis[0m [95mnot[0m validated_self:                                        [31m [0m
+[31m [0m   [2m 255 [0m[2m│   │   │   [0mwarnings.warn(                                                    [31m [0m
+[31m [0m   [2m 256 [0m[2m│   │   │   │   [0m[33m'[0m[33mA custom validator is returning a value other than `self`.[0m[33m\n[0m [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mValidationError: [0m[1;36m1[0m validation error for CallToolRequestParams
+arguments
+  Input should be a valid dictionary [1m[[0m[33mtype[0m=[35mdict_type[0m, [33minput_value[0m=[32m'[0m[32m{[0m[32m"query": "Search [0m
+[32mmedRxi...ations on this topic."[0m[32m}[0m[32m'[0m, [33minput_type[0m=[35mstr[0m[1m][0m
+    For further information visit [4;94mhttps://errors.pydantic.dev/2.11/v/dict_type[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:216 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m213 [0m[2m│   [0m[94mif[0m [96mlen[0m(tool_calls):                                                        [31m [0m
+[31m [0m   [2m214 [0m[2m│   │   [0m[94mfor[0m tool [95min[0m tool_calls:                                                [31m [0m
+[31m [0m   [2m215 [0m[2m│   │   │   [0mresult = asyncio.run(call_tool(tool))                              [31m [0m
+[31m [0m [31m❱ [0m216 [2m│   │   │   [0mst.sessio[1;4mn_state.messages.append({[0m[1;4;33m"[0m[1;4;33mro[0m[33mle[0m[33m"[0m: [33m"[0m[33muser[0m[33m"[0m, [33m"[0m[33mcontent[0m[33m"[0m: resul [31m [0m
+[31m [0m   [2m217 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m218 [0m[2m│   │   [0m[2m# Get next response from LLM[0m                                           [31m [0m
+[31m [0m   [2m219 [0m[2m│   │   [0mresponse = st.session_state.openai_client.chat.completions.create(     [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:195 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m192 [0m[2m│   │   │   [0m[33m"[0m[33masyncio.run() cannot be called from a running event loop[0m[33m"[0m)        [31m [0m
+[31m [0m   [2m193 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m194 [0m[2m│   [0m[94mwith[0m Runner(debug=debug, loop_factory=loop_factory) [94mas[0m runner:             [31m [0m
+[31m [0m [31m❱ [0m195 [2m│   │   [0m[94mreturn[0m [1;4mrunner.run(main)[0m                                                [31m [0m
+[31m [0m   [2m196 [0m                                                                               [31m [0m
+[31m [0m   [2m197 [0m                                                                               [31m [0m
+[31m [0m   [2m198 [0m[94mdef[0m[90m [0m[92m_cancel_all_tasks[0m(loop):                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:118 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m116 [0m[2m│   │   [0m[96mself[0m._interrupt_count = [94m0[0m                                              [31m [0m
+[31m [0m   [2m117 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m118 [2m│   │   │   [0m[94mreturn[0m [96mself[0m._loop.run_until_complete(task)                         [31m [0m
+[31m [0m   [2m119 [0m[2m│   │   [0m[94mexcept[0m exceptions.CancelledError:                                      [31m [0m
+[31m [0m   [2m120 [0m[2m│   │   │   [0m[94mif[0m [96mself[0m._interrupt_count > [94m0[0m:                                      [31m [0m
+[31m [0m   [2m121 [0m[2m│   │   │   │   [0muncancel = [96mgetattr[0m(task, [33m"[0m[33muncancel[0m[33m"[0m, [94mNone[0m)                     [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mbase_events.py[0m:725 in    [31m [0m
+[31m [0m run_until_complete                                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 722 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                                 [31m [0m
+[31m [0m   [2m 723 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future completed.[0m[33m'[0m) [31m [0m
+[31m [0m   [2m 724 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m [31m❱ [0m 725 [2m│   │   [0m[94mreturn[0m [1;4mfuture.result()[0m                                                [31m [0m
+[31m [0m   [2m 726 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m 727 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                           [31m [0m
+[31m [0m   [2m 728 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:136 in call_tool              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m133 [0m[2m# Call tool[0m                                                                    [31m [0m
+[31m [0m   [2m134 [0m[94masync[0m [94mdef[0m[90m [0m[92mcall_tool[0m(tool):                                                     [31m [0m
+[31m [0m   [2m135 [0m[2m│   [0m[94masync[0m [94mwith[0m st.session_state.mcp_client [94mas[0m mcp_client:                      [31m [0m
+[31m [0m [31m❱ [0m136 [2m│   │   [0m[94mreturn[0m [1;4;94mawait[0m[1;4m mcp_client.call_tool(tool.function.name, tool.function.ar[0m [31m [0m
+[31m [0m   [2m137 [0m                                                                               [31m [0m
+[31m [0m   [2m138 [0m                                                                               [31m [0m
+[31m [0m   [2m139 [0m[2m# ----------------------------------------------------------------------------[0m [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:857 in call_tool                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m854 [0m[2;33m│   │   │   [0m[33mToolError: If the tool call results in an error.[0m                   [31m [0m
+[31m [0m   [2m855 [0m[2;33m│   │   │   [0m[33mRuntimeError: If called while the client is not connected.[0m         [31m [0m
+[31m [0m   [2m856 [0m[2;33m│   │   [0m[33m"""[0m                                                                    [31m [0m
+[31m [0m [31m❱ [0m857 [2m│   │   [0mresult = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.call_tool_mcp([0m                                     [31m [0m
+[31m [0m   [2m858 [0m[2m│   │   │   [0m[1;4mname=name,[0m                                                         [31m [0m
+[31m [0m   [2m859 [0m[2m│   │   │   [0m[1;4marguments=arguments [0m[1;4;95mor[0m[1;4m {},[0m                                         [31m [0m
+[31m [0m   [2m860 [0m[2m│   │   │   [0m[1;4mtimeout=timeout,[0m                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:818 in call_tool_mcp                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m815 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m816 [0m[2m│   │   [0m[94mif[0m [96misinstance[0m(timeout, [96mint[0m | [96mfloat[0m):                                   [31m [0m
+[31m [0m   [2m817 [0m[2m│   │   │   [0mtimeout = datetime.timedelta(seconds=timeout)                      [31m [0m
+[31m [0m [31m❱ [0m818 [2m│   │   [0mresult = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.session.call_tool([0m                                 [31m [0m
+[31m [0m   [2m819 [0m[2m│   │   │   [0m[1;4mname=name,[0m                                                         [31m [0m
+[31m [0m   [2m820 [0m[2m│   │   │   [0m[1;4marguments=arguments,[0m                                               [31m [0m
+[31m [0m   [2m821 [0m[2m│   │   │   [0m[1;4mread_timeout_seconds=timeout,[0m                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/mcp/client/[0m[1msession[0m [31m [0m
+[31m [0m [1m.py[0m:297 in call_tool                                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m294 [0m[2m│   │   │   [0mtypes.ClientRequest(                                               [31m [0m
+[31m [0m   [2m295 [0m[2m│   │   │   │   [0mtypes.CallToolRequest(                                         [31m [0m
+[31m [0m   [2m296 [0m[2m│   │   │   │   │   [0mmethod=[33m"[0m[33mtools/call[0m[33m"[0m,                                       [31m [0m
+[31m [0m [31m❱ [0m297 [2m│   │   │   │   │   [0mparams=[1;4mtypes.CallToolRequestParams([0m                        [31m [0m
+[31m [0m   [2m298 [0m[2m│   │   │   │   │   │   [0m[1;4mname=name,[0m                                             [31m [0m
+[31m [0m   [2m299 [0m[2m│   │   │   │   │   │   [0m[1;4marguments=arguments,[0m                                   [31m [0m
+[31m [0m   [2m300 [0m[2m│   │   │   │   │   [0m[1;4m)[0m,                                                         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/pydantic/[0m[1mmain.py[0m:2 [31m [0m
+[31m [0m 53 in __init__                                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 250 [0m[2;33m│   │   [0m[33m"""[0m                                                                   [31m [0m
+[31m [0m   [2m 251 [0m[2m│   │   [0m[2m# `__tracebackhide__` tells pytest and some other tools to omit this [0m [31m [0m
+[31m [0m   [2m 252 [0m[2m│   │   [0m__tracebackhide__ = [94mTrue[0m                                              [31m [0m
+[31m [0m [31m❱ [0m 253 [2m│   │   [0mvalidated_self = [1;4;96mself[0m[1;4m.__pydantic_validator__.validate_python(data, se[0m [31m [0m
+[31m [0m   [2m 254 [0m[2m│   │   [0m[94mif[0m [96mself[0m [95mis[0m [95mnot[0m validated_self:                                        [31m [0m
+[31m [0m   [2m 255 [0m[2m│   │   │   [0mwarnings.warn(                                                    [31m [0m
+[31m [0m   [2m 256 [0m[2m│   │   │   │   [0m[33m'[0m[33mA custom validator is returning a value other than `self`.[0m[33m\n[0m [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mValidationError: [0m[1;36m1[0m validation error for CallToolRequestParams
+arguments
+  Input should be a valid dictionary [1m[[0m[33mtype[0m=[35mdict_type[0m, [33minput_value[0m=[32m'[0m[32m{[0m[32m"query": "Search [0m
+[32mmedRxi... recent publications."[0m[32m}[0m[32m'[0m, [33minput_type[0m=[35mstr[0m[1m][0m
+    For further information visit [4;94mhttps://errors.pydantic.dev/2.11/v/dict_type[0m

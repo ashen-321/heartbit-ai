@@ -77,8 +77,8 @@ def get_file_info(file_abspath: str):
     extension = extension[1:]
 
     match extension:
-        case "jpg" | "png" | "webp":
-            return "image_url", { "data": encoded_bytes, "format": extension }
+        case "jpg" | "jpeg" | "png" | "webp":
+            return "image_url", { "url": f"data:image/jpeg;base64,{encoded_bytes}" }
         case "mp3" | "wav":
             return "input_audio", { "data": encoded_bytes, "format": extension }
         case _:
@@ -125,20 +125,20 @@ async def process_query(query: str):
         # tools=tools
     )
     tool_calls = response.choices[0].message.tool_calls
-    print(f'Selected tools: {tool_calls}')
 
-    # Call tools and save results
     if len(tool_calls):
+        print(f'Selected tools: {tool_calls}')
+
+        # Call tools and save results
         for tool in tool_calls:
             result = await call_tool(tool)
             messages.append({"role": "user", "content": result.content[0].text})
 
-    # Get next response from LLM
-    response = client.chat.completions.create(
-        model=MODEL_ID,
-        max_tokens=3000,
-        messages=messages,
-    )
+        # Get next response from LLM
+        response = client.chat.completions.create(
+            model=MODEL_ID,
+            messages=messages,
+        )
     response = response.choices[0].message.content
     print("Chat response:", response)
 

@@ -14,15 +14,15 @@ from base64 import b64encode
 
 
 # Variables and constants
-input_file_path = os.path.join(os.path.dirname(__file__), "input-files")
+input_file_path = os.path.normpath(os.path.join(os.path.dirname(__file__), "../input-files"))
 image_extensions = [".jpg", ".jpeg", ".png", ".webp"]
 input_image_file = "input_image"
 query_audio_file = "query_audio.wav"
 last_uploaded_files = None
 
-os.environ["OPENAI_API_KEY"] = "EMPTY"
-os.environ["OPENAI_BASE_URL"] = "http://video.cavatar.info:8087/v1"
-MODEL_ID = 'alfredcs/gemma-3N-finetune'
+os.environ["OPENAI_API_KEY"] = os.getenv('bedrock_api_token') #"EMPTY"
+os.environ["OPENAI_BASE_URL"] = os.getenv('bedrock_api_url') #"http://mcp1.cavatar.info:8081/v1"
+MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0" #"alfredcs/torchrun-medgemma-27b-grpo-merged"
 voice_prompt = ''
 SYSTEM_PROMPT = 'You are a helpful assistant. Please answer the user question accurately and truthfully.'
 DISPLAYED_PROMPT = 'I am your assistant. How can I help today?'
@@ -90,8 +90,8 @@ with st.sidebar:
         st.divider()
         if st.button("Clear Chat History"):
             st.session_state.messages.clear()
-            st.session_state["messages"] = [{"role": "system", "content": SYSTEM_PROMPT}]
-            st.session_state["displayed_messages"] = [{"role": "assistant", "content": DISPLAYED_PROMPT}]
+            st.session_state.messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+            st.session_state.displayed_messages = [{"role": "assistant", "content": DISPLAYED_PROMPT}]
             record_audio_bytes = None
             voice_prompt = ""
 
@@ -103,13 +103,13 @@ with st.sidebar:
 
 # Create FastMCP client
 if "mcp_client" not in st.session_state:
-    st.session_state["mcp_client"] = Client(MCP_URL)
+    st.session_state.mcp_client = Client(MCP_URL)
 
 
 # Get tools
 async def get_tools():
     try:
-        async with st.session_state["mcp_client"] as mcp_client:
+        async with st.session_state.mcp_client as mcp_client:
             tools_list = await mcp_client.list_tools()
 
             return list(map(tool_reformat, tools_list))
@@ -132,8 +132,14 @@ def tool_reformat(tool):
 
 # Call tool
 async def call_tool(tool):
-    async with st.session_state["mcp_client"] as mcp_client:
-        return await mcp_client.call_tool(tool.function.name, tool.function.arguments)
+    async with st.session_state.mcp_client as mcp_client:
+        # Convert tool arguments from string to dict if necessary
+        if isinstance(tool.function.arguments, str):
+            args = eval(tool.function.arguments)
+        else:
+            args = tool.function.arguments
+        
+        return await mcp_client.call_tool(tool.function.name, args)
 
 
 # --------------------------------------------------------------------------------------------
@@ -145,12 +151,12 @@ start_time = time()
 
 # Message tracking
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "system", "content": SYSTEM_PROMPT}]
-    st.session_state["displayed_messages"] = [
+    st.session_state.messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+    st.session_state.displayed_messages = [
         {"role": "assistant", "content": "I am your assistant. How can I help today?"}]
 
-for msg in st.session_state.displayed_messages:
-    st.chat_message(msg["role"]).write(msg["content"])
+for message in st.session_state.displayed_messages:
+    st.chat_message(message["role"]).write(message["content"])
 
 # OpenAI Client
 if "openai_client" not in st.session_state:
@@ -201,7 +207,12 @@ if prompt := st.chat_input() or len(voice_prompt) > 3:
     st.chat_message("user").write(prompt)
 
     # Generate response
-    response = openai_generate(MODEL_ID, st.session_state.messages, max_tokens, tools)
+    response = st.session_state.openai_client.chat.completions.create(
+        model=MODEL_ID,
+        messages=st.session_state.messages,
+        max_tokens=max_tokens,
+        tools=tools
+    )
 
     # Call tools and save results
     tool_calls = response.choices[0].message.tool_calls
@@ -210,8 +221,12 @@ if prompt := st.chat_input() or len(voice_prompt) > 3:
             result = asyncio.run(call_tool(tool))
             st.session_state.messages.append({"role": "user", "content": result.content})
 
-    # Get next response from LLM
-    response = openai_generate(MODEL_ID, st.session_state.messages, max_tokens)
+        # Get next response from LLM
+        response = st.session_state.openai_client.chat.completions.create(
+            model=MODEL_ID,
+            messages=st.session_state.messages,
+            max_tokens=max_tokens
+        )
     footer = (f'✒︎***Content created with:*** {MODEL_ID}, Latency: {(time() - start_time) * 1000:.2f} ms, '
               f'Completion Tokens: {response.usage.completion_tokens}, Prompt Tokens: {response.usage.prompt_tokens}, '
               f'Total Tokens:{response.usage.total_tokens}')
