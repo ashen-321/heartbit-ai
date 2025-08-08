@@ -14,9 +14,6 @@ from base64 import b64encode
 
 
 # Variables and constants
-aoss_host = read_key_value(".aoss_config.txt", "AOSS_host_name")
-aoss_index = read_key_value(".aoss_config.txt", "AOSS_index_name")
-
 input_file_path = os.path.join(os.path.dirname(__file__), "input-files")
 image_extensions = [".jpg", ".jpeg", ".png", ".webp"]
 input_image_file = "input_image"

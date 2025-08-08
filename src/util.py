@@ -6,16 +6,6 @@ from openai import OpenAI
 from openai._types import NotGiven, NOT_GIVEN
 
 
-# Get AOSS key and values
-def read_key_value(file_path, key):
-    with open(file_path, 'r') as file:
-        for line in file:
-            key_value_pairs = line.strip().split(':')
-            if key_value_pairs[0] == key:
-                return key_value_pairs[1].lstrip()
-    return None
-
-
 def empty_directory(directory_path):
     if not os.path.exists(directory_path):
         return
