@@ -2,8 +2,6 @@ import json
 import os
 import requests
 import shutil
-from openai import OpenAI
-from openai._types import NotGiven, NOT_GIVEN
 
 
 def empty_directory(directory_path):

@@ -19,7 +19,6 @@ master_server = MasterMCPServer(
     sub_servers=[
         SubServer(url="http://localhost:8001/mcp", identifier='pubmed_server'),
         SubServer(url="http://localhost:8002/mcp", identifier='medrxiv_server'),
-        # SubServer(url="http://localhost:8003/mcp", identifier='medguru_server'),
     ]
 )
 master_server.startup()

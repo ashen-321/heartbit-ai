@@ -4,7 +4,6 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 import httpx
 from fastapi import HTTPException
-from pydantic import BaseModel
 from mcp.server.fastmcp import FastMCP
 
 # Create an MCP server
