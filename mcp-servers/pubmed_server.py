@@ -1,7 +1,7 @@
 import logging
 from typing import List, Optional
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass
+from pydantic import BaseModel
 import httpx
 from fastapi import HTTPException
 from mcp.server.fastmcp import FastMCP
@@ -15,8 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-@dataclass
-class PubMedArticle:
+class PubMedArticle(BaseModel):
     """Structure for PubMed article data"""
     pmid: str
     title: str
@@ -60,7 +59,8 @@ async def search_pubmed(
         search_data = search_response.json()
 
         pmids = search_data.get("esearchresult", {}).get("idlist", [])
-        if not pmids:
+
+        if not len(pmids):
             return []
 
         # Fetch detailed information for each PMID
