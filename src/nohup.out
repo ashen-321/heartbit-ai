@@ -515,3 +515,403 @@ arguments
   Input should be a valid dictionary [1m[[0m[33mtype[0m=[35mdict_type[0m, [33minput_value[0m=[32m'[0m[32m{[0m[32m"query": "Search [0m
 [32mmedRxi... recent publications."[0m[32m}[0m[32m'[0m, [33minput_type[0m=[35mstr[0m[1m][0m
     For further information visit [4;94mhttps://errors.pydantic.dev/2.11/v/dict_type[0m
+  Stopping...
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:7868
+  Network URL: http://172.31.11.95:7868
+  External URL: http://44.229.65.238:7868
+
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:467 in _session_runner                                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m464 [0m[2;33m│   │   [0m[33m"""[0m                                                                    [31m [0m
+[31m [0m   [2m465 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m   [2m466 [0m[2m│   │   │   [0m[94masync[0m [94mwith[0m AsyncExitStack() [94mas[0m stack:                              [31m [0m
+[31m [0m [31m❱ [0m467 [2m│   │   │   │   [0m[94mawait[0m stack.enter_async_context([96mself[0m._context_manager())       [31m [0m
+[31m [0m   [2m468 [0m[2m│   │   │   │   [0m[2m# Session/context is now ready[0m                                 [31m [0m
+[31m [0m   [2m469 [0m[2m│   │   │   │   [0m[96mself[0m._session_state.ready_event.set()                          [31m [0m
+[31m [0m   [2m470 [0m[2m│   │   │   │   [0m[2m# Wait until disconnect/stop is requested[0m                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/[0m[1mcontextlib.py[0m:668 in             [31m [0m
+[31m [0m enter_async_context                                                                  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m665 [0m[2m│   │   │   [0m[94mraise[0m [96mTypeError[0m([33mf[0m[33m"[0m[33m'[0m[33m{[0m[96mcls[0m.[91m__module__[0m[33m}[0m[33m.[0m[33m{[0m[96mcls[0m.[91m__qualname__[0m[33m}[0m[33m'[0m[33m object doe[0m [31m [0m
+[31m [0m   [2m666 [0m[2m│   │   │   │   │   │   │   [0m[33mf[0m[33m"[0m[33mnot support the asynchronous context manager pro[0m [31m [0m
+[31m [0m   [2m667 [0m[2m│   │   │   │   │   │      [0m) [94mfrom[0m[90m [0m[94mNone[0m                                         [31m [0m
+[31m [0m [31m❱ [0m668 [2m│   │   [0mresult = [1;4;94mawait[0m[1;4m _enter(cm)[0m                                              [31m [0m
+[31m [0m   [2m669 [0m[2m│   │   [0m[96mself[0m._push_async_cm_exit(cm, _exit)                                    [31m [0m
+[31m [0m   [2m670 [0m[2m│   │   [0m[94mreturn[0m result                                                          [31m [0m
+[31m [0m   [2m671 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/[0m[1mcontextlib.py[0m:214 in __aenter__  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m211 [0m[2m│   │   [0m[2m# they are only needed for recreation, which is not possible anymore[0m   [31m [0m
+[31m [0m   [2m212 [0m[2m│   │   [0m[94mdel[0m [96mself[0m.args, [96mself[0m.kwds, [96mself[0m.func                                    [31m [0m
+[31m [0m   [2m213 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m214 [2m│   │   │   [0m[94mreturn[0m [94mawait[0m anext([96mself[0m.gen)                                       [31m [0m
+[31m [0m   [2m215 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopAsyncIteration[0m[1;4m:[0m                                             [31m [0m
+[31m [0m   [2m216 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m"[0m[1;4;33mgenerator didn[0m[1;4;33m'[0m[1;4;33mt yield[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;94mNone[0m             [31m [0m
+[31m [0m   [2m217 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:341 in _context_manager                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m338 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m339 [0m[2m│   [0m[1;95m@asynccontextmanager[0m                                                       [31m [0m
+[31m [0m   [2m340 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92m_context_manager[0m([96mself[0m):                                          [31m [0m
+[31m [0m [31m❱ [0m341 [2m│   │   [0m[94mwith[0m [1;4mcatch(get_catch_handlers())[0m:                                      [31m [0m
+[31m [0m   [2m342 [0m[2m│   │   │   [0m[94masync[0m [94mwith[0m [96mself[0m.transport.connect_session(                         [31m [0m
+[31m [0m   [2m343 [0m[2m│   │   │   │   [0m**[96mself[0m._session_kwargs                                         [31m [0m
+[31m [0m   [2m344 [0m[2m│   │   │   [0m) [94mas[0m session:                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/exceptiongroup/[0m[1m_ca[0m [31m [0m
+[31m [0m [1mtch.py[0m:39 in __exit__                                                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 36 [0m[2m│   │   │   [0m[94melse[0m:                                                              [31m [0m
+[31m [0m   [2m 37 [0m[2m│   │   │   │   [0m[94mif[0m [96misinstance[0m(exc, BaseExceptionGroup):                        [31m [0m
+[31m [0m   [2m 38 [0m[2m│   │   │   │   │   [0m[94mtry[0m:                                                       [31m [0m
+[31m [0m [31m❱ [0m 39 [2m│   │   │   │   │   │   [0m[94mraise[0m unhandled [94mfrom[0m[90m [0m[4;96mexc[0m[4;96m.[0m[4;96m__cause__[0m                     [31m [0m
+[31m [0m   [2m 40 [0m[2m│   │   │   │   │   [0m[1;4;94mexcept[0m[1;4m BaseExceptionGroup:[0m                                 [31m [0m
+[31m [0m   [2m 41 [0m[2m│   │   │   │   │   │   [0m[1;2;4m# Change __context__ to __cause__ because Python 3.11 [0m [31m [0m
+[31m [0m   [2m 42 [0m[2m│   │   │   │   │   │   [0m[1;2;4m# too[0m                                                  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/exceptiongroup/[0m[1m_ca[0m [31m [0m
+[31m [0m [1mtch.py[0m:65 in handle_exception                                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 62 [0m[2m│   │   │   │   │   [0m[94mtry[0m:                                                       [31m [0m
+[31m [0m   [2m 63 [0m[2m│   │   │   │   │   │   [0m[94mraise[0m matched                                          [31m [0m
+[31m [0m   [2m 64 [0m[2m│   │   │   │   │   [0m[94mexcept[0m BaseExceptionGroup:                                 [31m [0m
+[31m [0m [31m❱ [0m 65 [2m│   │   │   │   │   │   [0mresult = handler(matched)                              [31m [0m
+[31m [0m   [2m 66 [0m[2m│   │   │   │   [0m[94mexcept[0m BaseExceptionGroup [94mas[0m new_exc:                          [31m [0m
+[31m [0m   [2m 67 [0m[2m│   │   │   │   │   [0m[94mif[0m new_exc [95mis[0m matched:                                     [31m [0m
+[31m [0m   [2m 68 [0m[2m│   │   │   │   │   │   [0mnew_exceptions.append(new_exc)                         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/utilities/[0m [31m [0m
+[31m [0m [1mexceptions.py[0m:29 in _exception_handler                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m26 [0m[2m│   │   │   │   │   [0mmessage=[33m"[0m[33mTimed out while waiting for response.[0m[33m"[0m,            [31m [0m
+[31m [0m   [2m27 [0m[2m│   │   │   │   [0m)                                                               [31m [0m
+[31m [0m   [2m28 [0m[2m│   │   │   [0m)                                                                   [31m [0m
+[31m [0m [31m❱ [0m29 [2m│   │   [0m[1;4;94mraise[0m[1;4m leaf[0m                                                              [31m [0m
+[31m [0m   [2m30 [0m                                                                                [31m [0m
+[31m [0m   [2m31 [0m                                                                                [31m [0m
+[31m [0m   [2m32 [0m[2m# this catch handler is used to catch taskgroup exception groups and raise the[0m  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/mcp/client/[0m[1mstreama[0m [31m [0m
+[31m [0m [1mble_http.py[0m:405 in handle_request_async                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m402 [0m[2m│   │   │   │   │   │   [0m[94mif[0m is_resumption:                                      [31m [0m
+[31m [0m   [2m403 [0m[2m│   │   │   │   │   │   │   [0m[94mawait[0m [96mself[0m._handle_resumption_request(ctx)         [31m [0m
+[31m [0m   [2m404 [0m[2m│   │   │   │   │   │   [0m[94melse[0m:                                                  [31m [0m
+[31m [0m [31m❱ [0m405 [2m│   │   │   │   │   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._handle_post_request(ctx)[0m               [31m [0m
+[31m [0m   [2m406 [0m[2m│   │   │   │   │   [0m                                                           [31m [0m
+[31m [0m   [2m407 [0m[2m│   │   │   │   │   [0m[2m# If this is a request, start a new task to handle it[0m      [31m [0m
+[31m [0m   [2m408 [0m[2m│   │   │   │   │   [0m[94mif[0m [96misinstance[0m(message.root, JSONRPCRequest):               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/mcp/client/[0m[1mstreama[0m [31m [0m
+[31m [0m [1mble_http.py[0m:259 in _handle_post_request                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m256 [0m[2m│   │   [0mmessage = ctx.session_message.message                                  [31m [0m
+[31m [0m   [2m257 [0m[2m│   │   [0mis_initialization = [96mself[0m._is_initialization_request(message)           [31m [0m
+[31m [0m   [2m258 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m [31m❱ [0m259 [2m│   │   [0m[94masync[0m [94mwith[0m [1;4mctx.client.stream([0m                                          [31m [0m
+[31m [0m   [2m260 [0m[2m│   │   │   [0m[1;4;33m"[0m[1;4;33mPOST[0m[1;4;33m"[0m[1;4m,[0m                                                            [31m [0m
+[31m [0m   [2m261 [0m[2m│   │   │   [0m[1;4;96mself[0m[1;4m.url,[0m                                                          [31m [0m
+[31m [0m   [2m262 [0m[2m│   │   │   [0m[1;4mjson=message.model_dump(by_alias=[0m[1;4;94mTrue[0m[1;4m, mode=[0m[1;4;33m"[0m[1;4;33mjson[0m[1;4;33m"[0m[1;4m, exclude_none=[0m[1;4;94mT[0m [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/[0m[1mcontextlib.py[0m:214 in __aenter__  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m211 [0m[2m│   │   [0m[2m# they are only needed for recreation, which is not possible anymore[0m   [31m [0m
+[31m [0m   [2m212 [0m[2m│   │   [0m[94mdel[0m [96mself[0m.args, [96mself[0m.kwds, [96mself[0m.func                                    [31m [0m
+[31m [0m   [2m213 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m214 [2m│   │   │   [0m[94mreturn[0m [94mawait[0m anext([96mself[0m.gen)                                       [31m [0m
+[31m [0m   [2m215 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopAsyncIteration[0m[1;4m:[0m                                             [31m [0m
+[31m [0m   [2m216 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m"[0m[1;4;33mgenerator didn[0m[1;4;33m'[0m[1;4;33mt yield[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;94mNone[0m             [31m [0m
+[31m [0m   [2m217 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/[0m[1m_client.py[0m:1 [31m [0m
+[31m [0m 583 in stream                                                                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1580 [0m[2m│   │   │   [0mtimeout=timeout,                                                  [31m [0m
+[31m [0m   [2m1581 [0m[2m│   │   │   [0mextensions=extensions,                                            [31m [0m
+[31m [0m   [2m1582 [0m[2m│   │   [0m)                                                                     [31m [0m
+[31m [0m [31m❱ [0m1583 [2m│   │   [0mresponse = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.send([0m                                           [31m [0m
+[31m [0m   [2m1584 [0m[2m│   │   │   [0m[1;4mrequest=request,[0m                                                  [31m [0m
+[31m [0m   [2m1585 [0m[2m│   │   │   [0m[1;4mauth=auth,[0m                                                        [31m [0m
+[31m [0m   [2m1586 [0m[2m│   │   │   [0m[1;4mfollow_redirects=follow_redirects,[0m                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/[0m[1m_client.py[0m:1 [31m [0m
+[31m [0m 629 in send                                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1626 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m   [2m1627 [0m[2m│   │   [0mauth = [96mself[0m._build_request_auth(request, auth)                        [31m [0m
+[31m [0m   [2m1628 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m [31m❱ [0m1629 [2m│   │   [0mresponse = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._send_handling_auth([0m                            [31m [0m
+[31m [0m   [2m1630 [0m[2m│   │   │   [0m[1;4mrequest,[0m                                                          [31m [0m
+[31m [0m   [2m1631 [0m[2m│   │   │   [0m[1;4mauth=auth,[0m                                                        [31m [0m
+[31m [0m   [2m1632 [0m[2m│   │   │   [0m[1;4mfollow_redirects=follow_redirects,[0m                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/[0m[1m_client.py[0m:1 [31m [0m
+[31m [0m 657 in _send_handling_auth                                                           [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1654 [0m[2m│   │   │   [0mrequest = [94mawait[0m auth_flow.[92m__anext__[0m()                             [31m [0m
+[31m [0m   [2m1655 [0m[2m│   │   │   [0m                                                                  [31m [0m
+[31m [0m   [2m1656 [0m[2m│   │   │   [0m[94mwhile[0m [94mTrue[0m:                                                       [31m [0m
+[31m [0m [31m❱ [0m1657 [2m│   │   │   │   [0mresponse = [94mawait[0m [96mself[0m._send_handling_redirects(               [31m [0m
+[31m [0m   [2m1658 [0m[2m│   │   │   │   │   [0mrequest,                                                  [31m [0m
+[31m [0m   [2m1659 [0m[2m│   │   │   │   │   [0mfollow_redirects=follow_redirects,                        [31m [0m
+[31m [0m   [2m1660 [0m[2m│   │   │   │   │   [0mhistory=history,                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/[0m[1m_client.py[0m:1 [31m [0m
+[31m [0m 694 in _send_handling_redirects                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1691 [0m[2m│   │   │   [0m[94mfor[0m hook [95min[0m [96mself[0m._event_hooks[[33m"[0m[33mrequest[0m[33m"[0m]:                         [31m [0m
+[31m [0m   [2m1692 [0m[2m│   │   │   │   [0m[94mawait[0m hook(request)                                           [31m [0m
+[31m [0m   [2m1693 [0m[2m│   │   │   [0m                                                                  [31m [0m
+[31m [0m [31m❱ [0m1694 [2m│   │   │   [0mresponse = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._send_single_request(request)[0m               [31m [0m
+[31m [0m   [2m1695 [0m[2m│   │   │   [0m[94mtry[0m:                                                              [31m [0m
+[31m [0m   [2m1696 [0m[2m│   │   │   │   [0m[94mfor[0m hook [95min[0m [96mself[0m._event_hooks[[33m"[0m[33mresponse[0m[33m"[0m]:                    [31m [0m
+[31m [0m   [2m1697 [0m[2m│   │   │   │   │   [0m[94mawait[0m hook(response)                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/[0m[1m_client.py[0m:1 [31m [0m
+[31m [0m 730 in _send_single_request                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1727 [0m[2m│   │   │   [0m)                                                                 [31m [0m
+[31m [0m   [2m1728 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m   [2m1729 [0m[2m│   │   [0m[94mwith[0m request_context(request=request):                                [31m [0m
+[31m [0m [31m❱ [0m1730 [2m│   │   │   [0mresponse = [1;4;94mawait[0m[1;4m transport.handle_async_request(request)[0m          [31m [0m
+[31m [0m   [2m1731 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m   [2m1732 [0m[2m│   │   [0m[94massert[0m [96misinstance[0m(response.stream, AsyncByteStream)                   [31m [0m
+[31m [0m   [2m1733 [0m[2m│   │   [0mresponse.request = request                                            [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/_transports/[0m [31m [0m
+[31m [0m [1mdefault.py[0m:393 in handle_async_request                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m390 [0m[2m│   │   │   [0mcontent=request.stream,                                            [31m [0m
+[31m [0m   [2m391 [0m[2m│   │   │   [0mextensions=request.extensions,                                     [31m [0m
+[31m [0m   [2m392 [0m[2m│   │   [0m)                                                                      [31m [0m
+[31m [0m [31m❱ [0m393 [2m│   │   [0m[94mwith[0m [1;4mmap_httpcore_exceptions()[0m:                                        [31m [0m
+[31m [0m   [2m394 [0m[2m│   │   │   [0mresp = [94mawait[0m [96mself[0m._pool.handle_async_request(req)                  [31m [0m
+[31m [0m   [2m395 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m396 [0m[2m│   │   [0m[94massert[0m [96misinstance[0m(resp.stream, typing.AsyncIterable)                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/[0m[1mcontextlib.py[0m:162 in __exit__    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m159 [0m[2m│   │   │   │   [0m[2m# tell if we get the same exception back[0m                       [31m [0m
+[31m [0m   [2m160 [0m[2m│   │   │   │   [0mvalue = typ()                                                  [31m [0m
+[31m [0m   [2m161 [0m[2m│   │   │   [0m[94mtry[0m:                                                               [31m [0m
+[31m [0m [31m❱ [0m162 [2m│   │   │   │   [0m[96mself[0m.gen.throw(value)                                          [31m [0m
+[31m [0m   [2m163 [0m[2m│   │   │   [0m[94mexcept[0m [96mStopIteration[0m [94mas[0m exc:                                       [31m [0m
+[31m [0m   [2m164 [0m[2m│   │   │   │   [0m[2m# Suppress StopIteration *unless* it's the same exception that[0m [31m [0m
+[31m [0m   [2m165 [0m[2m│   │   │   │   [0m[2m# was passed to throw().  This prevents a StopIteration[0m        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/httpx/_transports/[0m [31m [0m
+[31m [0m [1mdefault.py[0m:118 in map_httpcore_exceptions                                            [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   │   [0m[94mraise[0m                                                              [31m [0m
+[31m [0m   [2m116 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m117 [0m[2m│   │   [0mmessage = [96mstr[0m(exc)                                                     [31m [0m
+[31m [0m [31m❱ [0m118 [2m│   │   [0m[1;4;94mraise[0m[1;4m mapped_exc(message) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;96mexc[0m                                     [31m [0m
+[31m [0m   [2m119 [0m                                                                               [31m [0m
+[31m [0m   [2m120 [0m                                                                               [31m [0m
+[31m [0m   [2m121 [0m[94mclass[0m[90m [0m[4;92mResponseStream[0m(SyncByteStream):                                          [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mConnectError: [0mAll connection attempts failed
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:112 in get_tools              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m109 [0m[2m# Get tools[0m                                                                    [31m [0m
+[31m [0m   [2m110 [0m[94masync[0m [94mdef[0m[90m [0m[92mget_tools[0m():                                                         [31m [0m
+[31m [0m   [2m111 [0m[2m│   [0m[94mtry[0m:                                                                       [31m [0m
+[31m [0m [31m❱ [0m112 [2m│   │   [0m[94masync[0m [94mwith[0m st.session_state.mcp_client [94mas[0m mcp_client:                  [31m [0m
+[31m [0m   [2m113 [0m[2m│   │   │   [0mtools_list = [94mawait[0m mcp_client.list_tools()                         [31m [0m
+[31m [0m   [2m114 [0m[2m│   │   │   [0m                                                                   [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   │   [0m[94mreturn[0m [96mlist[0m([96mmap[0m(tool_reformat, tools_list))                        [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:362 in __aenter__                                                             [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m359 [0m[2m│   │   │   │   │   [0m[96mself[0m._session_state.initialize_result = [94mNone[0m               [31m [0m
+[31m [0m   [2m360 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m361 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92m__aenter__[0m([96mself[0m):                                                [31m [0m
+[31m [0m [31m❱ [0m362 [2m│   │   [0m[94mreturn[0m [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._connect()[0m                                           [31m [0m
+[31m [0m   [2m363 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m364 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92m__aexit__[0m([96mself[0m, exc_type, exc_val, exc_tb):                      [31m [0m
+[31m [0m   [2m365 [0m[2m│   │   [0m[94mawait[0m [96mself[0m._disconnect()                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:406 in _connect                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m403 [0m[2m│   │   │   │   │   │   [0m)                                                      [31m [0m
+[31m [0m   [2m404 [0m[2m│   │   │   │   │   [0m[94mif[0m [96misinstance[0m(exception, httpx.HTTPStatusError):           [31m [0m
+[31m [0m   [2m405 [0m[2m│   │   │   │   │   │   [0m[94mraise[0m exception                                        [31m [0m
+[31m [0m [31m❱ [0m406 [2m│   │   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m                                        [31m [0m
+[31m [0m   [2m407 [0m[2m│   │   │   │   │   │   [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mClient failed to connect: [0m[1;4;33m{[0m[1;4mexception[0m[1;4;33m}[0m[1;4;33m"[0m               [31m [0m
+[31m [0m   [2m408 [0m[2m│   │   │   │   │   [0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;96mexception[0m                                           [31m [0m
+[31m [0m   [2m409 [0m                                                                               [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mRuntimeError: [0mClient failed to connect: All connection attempts failed
+
+[3mDuring handling of the above exception, another exception occurred:[0m
+
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:174 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m171 [0m[2m│   │   [0mprompt = voice_prompt                                                  [31m [0m
+[31m [0m   [2m172 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m173 [0m[2m│   [0m[2m# Get tools[0m                                                                [31m [0m
+[31m [0m [31m❱ [0m174 [2m│   [0mtools = [1;4masyncio.run(get_tools())[0m                                           [31m [0m
+[31m [0m   [2m175 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m176 [0m[2m│   [0m[2m# Add relevant files to message content[0m                                    [31m [0m
+[31m [0m   [2m177 [0m[2m│   [0mmessage_content = []                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:195 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m192 [0m[2m│   │   │   [0m[33m"[0m[33masyncio.run() cannot be called from a running event loop[0m[33m"[0m)        [31m [0m
+[31m [0m   [2m193 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m194 [0m[2m│   [0m[94mwith[0m Runner(debug=debug, loop_factory=loop_factory) [94mas[0m runner:             [31m [0m
+[31m [0m [31m❱ [0m195 [2m│   │   [0m[94mreturn[0m [1;4mrunner.run(main)[0m                                                [31m [0m
+[31m [0m   [2m196 [0m                                                                               [31m [0m
+[31m [0m   [2m197 [0m                                                                               [31m [0m
+[31m [0m   [2m198 [0m[94mdef[0m[90m [0m[92m_cancel_all_tasks[0m(loop):                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:118 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m116 [0m[2m│   │   [0m[96mself[0m._interrupt_count = [94m0[0m                                              [31m [0m
+[31m [0m   [2m117 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m118 [2m│   │   │   [0m[94mreturn[0m [96mself[0m._loop.run_until_complete(task)                         [31m [0m
+[31m [0m   [2m119 [0m[2m│   │   [0m[94mexcept[0m exceptions.CancelledError:                                      [31m [0m
+[31m [0m   [2m120 [0m[2m│   │   │   [0m[94mif[0m [96mself[0m._interrupt_count > [94m0[0m:                                      [31m [0m
+[31m [0m   [2m121 [0m[2m│   │   │   │   [0muncancel = [96mgetattr[0m(task, [33m"[0m[33muncancel[0m[33m"[0m, [94mNone[0m)                     [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mbase_events.py[0m:725 in    [31m [0m
+[31m [0m run_until_complete                                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 722 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                                 [31m [0m
+[31m [0m   [2m 723 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future completed.[0m[33m'[0m) [31m [0m
+[31m [0m   [2m 724 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m [31m❱ [0m 725 [2m│   │   [0m[94mreturn[0m [1;4mfuture.result()[0m                                                [31m [0m
+[31m [0m   [2m 726 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m 727 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                           [31m [0m
+[31m [0m   [2m 728 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:117 in get_tools              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m114 [0m[2m│   │   │   [0m                                                                   [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   │   [0m[94mreturn[0m [96mlist[0m([96mmap[0m(tool_reformat, tools_list))                        [31m [0m
+[31m [0m   [2m116 [0m[2m│   [0m[94mexcept[0m [96mRuntimeError[0m:                                                       [31m [0m
+[31m [0m [31m❱ [0m117 [2m│   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m'[0m[1;4;33mEnsure master_mcp_server.py is running before star[0m [31m [0m
+[31m [0m   [2m118 [0m                                                                               [31m [0m
+[31m [0m   [2m119 [0m                                                                               [31m [0m
+[31m [0m   [2m120 [0m[2m# Reformat FastMCP tools to OpenAI standard[0m                                    [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mRuntimeError: [0mEnsure master_mcp_server.py is running before starting the chatbot.
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:221 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m218 [0m[2m│   [0mtool_calls = response.choices[[94m0[0m].message.tool_calls                        [31m [0m
+[31m [0m   [2m219 [0m[2m│   [0m[94mif[0m [96mlen[0m(tool_calls):                                                        [31m [0m
+[31m [0m   [2m220 [0m[2m│   │   [0m[94mfor[0m tool [95min[0m tool_calls:                                                [31m [0m
+[31m [0m [31m❱ [0m221 [2m│   │   │   [0mresult = [1;4masyncio.run(call_tool(tool))[0m                              [31m [0m
+[31m [0m   [2m222 [0m[2m│   │   │   [0mst.session_state.messages.append({[33m"[0m[33mrole[0m[33m"[0m: [33m"[0m[33muser[0m[33m"[0m, [33m"[0m[33mcontent[0m[33m"[0m: resul [31m [0m
+[31m [0m   [2m223 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m224 [0m[2m│   │   [0m[2m# Get next response from LLM[0m                                           [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:195 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m192 [0m[2m│   │   │   [0m[33m"[0m[33masyncio.run() cannot be called from a running event loop[0m[33m"[0m)        [31m [0m
+[31m [0m   [2m193 [0m[2m│   [0m                                                                           [31m [0m
+[31m [0m   [2m194 [0m[2m│   [0m[94mwith[0m Runner(debug=debug, loop_factory=loop_factory) [94mas[0m runner:             [31m [0m
+[31m [0m [31m❱ [0m195 [2m│   │   [0m[94mreturn[0m [1;4mrunner.run(main)[0m                                                [31m [0m
+[31m [0m   [2m196 [0m                                                                               [31m [0m
+[31m [0m   [2m197 [0m                                                                               [31m [0m
+[31m [0m   [2m198 [0m[94mdef[0m[90m [0m[92m_cancel_all_tasks[0m(loop):                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mrunners.py[0m:118 in run    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m115 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m   [2m116 [0m[2m│   │   [0m[96mself[0m._interrupt_count = [94m0[0m                                              [31m [0m
+[31m [0m   [2m117 [0m[2m│   │   [0m[94mtry[0m:                                                                   [31m [0m
+[31m [0m [31m❱ [0m118 [2m│   │   │   [0m[94mreturn[0m [96mself[0m._loop.run_until_complete(task)                         [31m [0m
+[31m [0m   [2m119 [0m[2m│   │   [0m[94mexcept[0m exceptions.CancelledError:                                      [31m [0m
+[31m [0m   [2m120 [0m[2m│   │   │   [0m[94mif[0m [96mself[0m._interrupt_count > [94m0[0m:                                      [31m [0m
+[31m [0m   [2m121 [0m[2m│   │   │   │   [0muncancel = [96mgetattr[0m(task, [33m"[0m[33muncancel[0m[33m"[0m, [94mNone[0m)                     [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/asyncio/[0m[1mbase_events.py[0m:725 in    [31m [0m
+[31m [0m run_until_complete                                                                   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 722 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                                 [31m [0m
+[31m [0m   [2m 723 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future completed.[0m[33m'[0m) [31m [0m
+[31m [0m   [2m 724 [0m[2m│   │   [0m                                                                      [31m [0m
+[31m [0m [31m❱ [0m 725 [2m│   │   [0m[94mreturn[0m [1;4mfuture.result()[0m                                                [31m [0m
+[31m [0m   [2m 726 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m 727 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                           [31m [0m
+[31m [0m   [2m 728 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:142 in call_tool              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m139 [0m[2m│   │   [0m[94melse[0m:                                                                  [31m [0m
+[31m [0m   [2m140 [0m[2m│   │   │   [0margs = tool.function.arguments                                     [31m [0m
+[31m [0m   [2m141 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m [31m❱ [0m142 [2m│   │   [0m[94mreturn[0m [1;4;94mawait[0m[1;4m mcp_client.call_tool(tool.function.name, args)[0m            [31m [0m
+[31m [0m   [2m143 [0m                                                                               [31m [0m
+[31m [0m   [2m144 [0m                                                                               [31m [0m
+[31m [0m   [2m145 [0m[2m# ----------------------------------------------------------------------------[0m [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/fastmcp/client/[0m[1mcli[0m [31m [0m
+[31m [0m [1ment.py[0m:866 in call_tool                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m863 [0m[2m│   │   [0mdata = [94mNone[0m                                                            [31m [0m
+[31m [0m   [2m864 [0m[2m│   │   [0m[94mif[0m result.isError [95mand[0m raise_on_error:                                  [31m [0m
+[31m [0m   [2m865 [0m[2m│   │   │   [0mmsg = cast(mcp.types.TextContent, result.content[[94m0[0m]).text          [31m [0m
+[31m [0m [31m❱ [0m866 [2m│   │   │   [0m[1;4;94mraise[0m[1;4m ToolError(msg)[0m                                               [31m [0m
+[31m [0m   [2m867 [0m[2m│   │   [0m[94melif[0m result.structuredContent:                                         [31m [0m
+[31m [0m   [2m868 [0m[2m│   │   │   [0m[94mtry[0m:                                                               [31m [0m
+[31m [0m   [2m869 [0m[2m│   │   │   │   [0m[94mif[0m name [95mnot[0m [95min[0m [96mself[0m.session._tool_output_schemas:              [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mToolError: [0mError calling tool [32m'access_sub_mcp'[0m: Recursion limit of [1;36m30[0m reached without 
+hitting a stop condition. You can increase the limit by setting the `recursion_limit` 
+config key.
+For troubleshooting, visit: 
+[4;94mhttps://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mexec_code.py[0m:128 in exec_func_with_error_handling                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/.conda/envs/firstaid-new/lib/python3.13/site-packages/streamlit/runtime/[0m [31m [0m
+[31m [0m [2mscriptrunner/[0m[1mscript_runner.py[0m:669 in code_to_exec                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/aaron/src/first-aid/demo/heartbit-ai/src/[0m[1mhome.py[0m:224 in <module>               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m221 [0m[2m│   │   │   [0mresult = asyncio.run(call_tool(tool))                              [31m [0m
+[31m [0m   [2m222 [0m[2m│   │   │   [0mst.session_state.messages.append({[33m"[0m[33mrole[0m[33m"[0m: [33m"[0m[33muser[0m[33m"[0m, [33m"[0m[33mcontent[0m[33m"[0m: resul [31m [0m
+[31m [0m   [2m223 [0m[2m│   │   [0m                                                                       [31m [0m
+[31m [0m [31m❱ [0m224 [2m│   │  [0m[1;2;4m [0m[1;2;4m# Get next res[0m[2mponse from LLM[0m                                           [31m [0m
+[31m [0m   [2m225 [0m[2m│   │   [0mresponse = st.session_state.openai_client.chat.completions.create(     [31m [0m
+[31m [0m   [2m226 [0m[2m│   │   │   [0mmodel=MODEL_ID,                                                    [31m [0m
+[31m [0m   [2m227 [0m[2m│   │   │   [0mmessages=st.session_state.messages,                                [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mTypeError: [0mobject of type [32m'NoneType'[0m has no [1;35mlen[0m[1m([0m[1m)[0m
+  Stopping...

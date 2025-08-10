@@ -20,15 +20,20 @@ if not os.path.exists(input_abspath):
 
 
 # Model ID
-MODEL_ID = "alfredcs/torchrun-medgemma-27b-grpo-merged" #"alfredcs/gemma-3N-finetune" #"google/gemma-3n-e4b-it"
+MODEL_ID = "google/gemma-3n-e4b-it" 
+FINETUNED_MODEL_ID = "alfredcs/gemma-3N-finetune"
 
 # Create vLLM client
 OPENAI_API_KEY = "EMPTY"
-OPENAI_API_BASE = "http://mcp1.cavatar.info:8081/v1" #"http://video.cavatar.info:8087/v1"
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,
-    base_url=OPENAI_API_BASE,
+    base_url="http://mcp1.cavatar.info:8081/v1",
+)
+
+finetuned_client = OpenAI(
+    api_key=OPENAI_API_KEY,
+    base_url="http://video.cavatar.info:8087/v1",
 )
 
 # Create FastMCP client
@@ -91,6 +96,8 @@ async def process_query(query: str):
 
     # Add relevant files to message content
     message_content = []
+    files = []
+    query_with_files = False
     for entry in os.listdir(input_abspath):
         entry_abspath = os.path.join(input_abspath, entry)
 
@@ -110,6 +117,8 @@ async def process_query(query: str):
             print(f'\nError: Attempted to load file {entry} but could not determine its file type. Continuing...\n')
             continue
 
+        query_with_files = True
+        files.append(entry)
         message_content.append({"type": file_type, file_type: file_contents})
 
     # Add query to message content
@@ -119,24 +128,16 @@ async def process_query(query: str):
     messages.append({"role": "user", "content": message_content})
 
     # Call model with messages
-    response = client.chat.completions.create(
-        model=MODEL_ID,
-        messages=messages,
-        # tools=tools
-    )
-    tool_calls = response.choices[0].message.tool_calls
-
-    if len(tool_calls):
-        print(f'Selected tools: {tool_calls}')
-
-        # Call tools and save results
-        for tool in tool_calls:
-            result = await call_tool(tool)
-            messages.append({"role": "user", "content": result.content[0].text})
-
-        # Get next response from LLM
+    # Fine-tuned does not support images or audio so use standard Gemma-3N otherwise
+    if query_with_files:
+        print(f'Querying with files {", ".join(files)}')
         response = client.chat.completions.create(
             model=MODEL_ID,
+            messages=messages,
+        )
+    else:
+        response = finetuned_client.chat.completions.create(
+            model=FINETUNED_MODEL_ID,
             messages=messages,
         )
     response = response.choices[0].message.content
