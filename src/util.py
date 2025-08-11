@@ -4,11 +4,22 @@ import requests
 import shutil
 
 
+# Read AOSS config
+def read_aoss_config(file_path, key):
+    with open(file_path, 'r') as file:
+        for line in file:
+            key_value_pairs = line.strip().split(':')
+            if key_value_pairs[0] == key:
+                return key_value_pairs[1].lstrip()
+    
+    return None
+
+
+# Wipe directory of all contents
 def empty_directory(directory_path):
     if not os.path.exists(directory_path):
         return
 
-    # Wipe directory of all contents
     for item in os.scandir(directory_path):
         if item.is_file():
             os.remove(item.path)
@@ -16,7 +27,8 @@ def empty_directory(directory_path):
             shutil.rmtree(item.path)
 
 
-def get_asr(audio_filename):
+# Get text from speech
+def get_transcription(audio_filename):
     file_size = os.path.getsize(audio_filename)
     if file_size == 0:
         return 'No audio.'

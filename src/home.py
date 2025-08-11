@@ -13,6 +13,9 @@ from base64 import b64encode
 # --------------------------------------------------------------------------------------------
 
 
+aoss_host = read_aoss_config(".aoss_config.txt", "AOSS_host_name")
+aoss_index = read_aoss_config(".aoss_config.txt", "AOSS_index_name")
+
 # Variables and constants
 input_file_path = os.path.normpath(os.path.join(os.path.dirname(__file__), "../input-files"))
 image_extensions = [".jpg", ".jpeg", ".png", ".webp"]
@@ -20,9 +23,12 @@ input_image_file = "input_image"
 query_audio_file = "query_audio.wav"
 last_uploaded_files = None
 
-os.environ["OPENAI_API_KEY"] = os.getenv('bedrock_api_token') #"EMPTY"
-os.environ["OPENAI_BASE_URL"] = os.getenv('bedrock_api_url') #"http://mcp1.cavatar.info:8081/v1"
-MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0" #"alfredcs/torchrun-medgemma-27b-grpo-merged"
+# os.environ["OPENAI_API_KEY"] = os.getenv('bedrock_api_token') #"EMPTY"
+# os.environ["OPENAI_BASE_URL"] = os.getenv('bedrock_api_url') #"http://mcp1.cavatar.info:8081/v1"
+# MODEL_ID = "us.anthropic.claude-3-7-sonnet-20250219-v1:0" #"alfredcs/torchrun-medgemma-27b-grpo-merged"
+os.environ["OPENAI_API_KEY"] = "EMPTY"
+os.environ["OPENAI_BASE_URL"] = "http://mcp1.cavatar.info:8081/v1"
+MODEL_ID = "alfredcs/torchrun-medgemma-27b-grpo-merged"
 voice_prompt = ''
 SYSTEM_PROMPT = '''
     You are a trained medical and first aid assistant. Answer the user's question carefully, taking 
@@ -37,6 +43,11 @@ MCP_URL = 'http://localhost:3000/mcp'
 # Streamlit setup
 st.set_page_config(page_title="Heartbit AI", page_icon="🩺", layout="wide")
 st.title("Medical Assistant")
+
+
+def vto_encap_web():
+    iframe_src = "https://agent.cavatar.info:7861"
+    components.iframe(iframe_src)
 
 
 # --------------------------------------------------------------------------------------------
@@ -89,12 +100,11 @@ with st.sidebar:
             with open(query_audio_file, 'wb') as audio_file:
                 audio_file.write(record_audio_bytes.getvalue())
             if os.path.exists(query_audio_file):
-                voice_prompt = get_asr(query_audio_file).encode('utf-8').decode('unicode_escape')
+                voice_prompt = get_transcription(query_audio_file).encode('utf-8').decode('unicode_escape')
 
         # ---- Clear chat history ----
         st.divider()
         if st.button("Clear Chat History"):
-            st.session_state.messages.clear()
             st.session_state.messages = [{"role": "system", "content": SYSTEM_PROMPT}]
             st.session_state.displayed_messages = [{"role": "assistant", "content": DISPLAYED_PROMPT}]
             record_audio_bytes = None
@@ -157,15 +167,14 @@ start_time = time()
 # Message tracking
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-    st.session_state.displayed_messages = [
-        {"role": "assistant", "content": "I am your assistant. How can I help today?"}]
+    st.session_state.displayed_messages = [{"role": "assistant", "content": "I am your assistant. How can I help today?"}]
 
 for message in st.session_state.displayed_messages:
     st.chat_message(message["role"]).write(message["content"])
 
 # OpenAI Client
 if "openai_client" not in st.session_state:
-    st.session_state["openai_client"] = OpenAI()
+    st.session_state.openai_client = OpenAI()
 
 # Prompt input logic
 if prompt := st.chat_input() or len(voice_prompt) > 3:
@@ -234,13 +243,13 @@ if prompt := st.chat_input() or len(voice_prompt) > 3:
         )
 
     # Generate message footer
-    footer = (f'✒︎***Content created with:*** {"alfredcs/torchrun-medgemma-27b-grpo-merged"}, Latency: {(time() - start_time) * 1000:.2f} ms, '
+    footer = (f'✒︎***Content created with:*** {"aaron/torchrun-medgemma-27b-grpo-merged"}, Latency: {(time() - start_time) * 1000:.2f} ms, '
               f'Completion Tokens: {response.usage.completion_tokens}, Prompt Tokens: {response.usage.prompt_tokens}, '
               f'Total Tokens: {response.usage.total_tokens}')
 
     # Display text and save to message memory
     response = response.choices[0].message.content
     response_formatted = f"{response}\n\n {footer}"
-    st.session_state.messages.append({"role": "assistant", "content": response_formatted})
+    st.session_state.messages.append({"role": "assistant", "content": response})
     st.session_state.displayed_messages.append({"role": "assistant", "content": response_formatted})
     st.chat_message("ai", avatar='🤵').write(response_formatted)
